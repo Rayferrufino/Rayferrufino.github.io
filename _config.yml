@@ -34,6 +34,9 @@ dash:
     - url: https://github.com/Rayferrufino
       icon: github-square
       color: purple
+    - url: https://www.linkedin.com/in/ray-ferrufino/
+      icon: linkedin-square
+      color: teal
 
 # Build settings
 theme: jekyll-dash
