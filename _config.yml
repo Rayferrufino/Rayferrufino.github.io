@@ -27,13 +27,13 @@ dash:
   social_links:
     - url: https://linkedin.com/in/ray-ferrufino/
       icon: linkedin
-      color: cyan
+      color: blue
     - url: https://www.hackthebox.eu/profile/169983
       icon: redhat
       color: red
     - url: https://github.com/Rayferrufino
       icon: github-square
-      color: purple
+      color: teal
        
 
 # Build settings
