@@ -25,6 +25,9 @@ dash:
   # generate social links in footer
   # supported colors: green, red, orange, blue, cyan, pink, teal, yellow, indigo, purple
   social_links:
+    - url: rayferrufino@gmail.com
+      icon: inbox
+      color: indigo
     - url: https://linkedin.com/in/ray-ferrufino/
       icon: linkedin
       color: cyan
