@@ -35,8 +35,9 @@ dash:
       icon: github-square
       color: purple
     - url: rayferrufino@gmail.com
-      icon: envelope-square
+      icon: inbox
       color: yellow
+    
 
 # Build settings
 theme: jekyll-dash
