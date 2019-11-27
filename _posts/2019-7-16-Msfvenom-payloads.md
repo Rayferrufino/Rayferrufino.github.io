@@ -1,9 +1,8 @@
 ---
 layout: post
 title: MSFVenom-Payloads Cheat sheet
-author: Rayzer0
-category: Red Team
-date: 2019-7-16
+description : A handy list of payloads for pentesters
+tags: Red Team, msfvenom, cheat sheet
 ---
 # List payloads
 ```ruby
