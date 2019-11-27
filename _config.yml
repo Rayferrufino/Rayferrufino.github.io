@@ -39,7 +39,7 @@ disqus:
       icon: github-square
       color: purple
     - url: https://www.linkedin.com/in/ray-ferrufino
-      icon: linkedin-square
+      icon: linkedin
       color: teal
 
 # Build settings
