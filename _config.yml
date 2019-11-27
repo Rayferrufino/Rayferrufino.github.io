@@ -29,7 +29,7 @@ dash:
       icon: linkedin
       color: cyan
     - url: https://bitbrain.itch.io
-      icon: at
+      icon: redhat
       color: red
     - url: https://github.com/Rayferrufino
       icon: github-square
