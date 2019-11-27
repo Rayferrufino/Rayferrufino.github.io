@@ -230,7 +230,7 @@
 
    & > .post-meta {
      @include themed() {
-        color: t('foreground-color-alt');
+        color: #ffffff;
      }
      font-size: $small-font-size;
    }
