@@ -1,5 +1,5 @@
 title: Rayzer0 
-author: Github User
+author: GitHub User
 email: rayferrufino@gmail.com
 description: > # this means to ignore newlines until "show_exerpts:"
   Write an awesome description for your new site here. You can edit this
@@ -26,7 +26,7 @@ dash:
   # supported colors: green, red, orange, blue, cyan, pink, teal, yellow, indigo, purple
   social_links:
     - url: https://linkedin.com/in/ray-ferrufino/
-      icon: twitter-square
+      icon: linkedin
       color: cyan
     - url: https://bitbrain.itch.io
       icon: itch-io
