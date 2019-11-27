@@ -27,9 +27,9 @@ disqus:
   # supported colors: green, red, orange, blue, cyan, pink, teal, yellow, indigo, purple
   social_links:
     - url: https://www.linkedin.com/in/ray-ferrufino
-      icon: linkedin
+      icon: linkedin-in
       color: cyan
-    - url: https://bitbrain.itch.io
+    - url: https://www.linkedin.com/in/ray-ferrufino
       icon: itch-io
       color: red
     - url: https://github.com/Rayferrufino
