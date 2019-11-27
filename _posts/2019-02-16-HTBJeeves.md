@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "HTB Jeeves Windows"
-decription: Tools and techniques used, pass the hash, msfvenom and john 
+decription : Tools and techniques used, pass the hash, msfvenom and john 
 tags: HTB, groovy, rottenpotato, john2keepass
 ---
 
