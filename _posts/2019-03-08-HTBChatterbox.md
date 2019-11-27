@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "HTB Chatterbox Windows"
-description: Chatterbox, is a medium difficulty machine from Hack the Box! Great for learning enumeration on windows
+description: Tools and Techniques used, msfvenom, windows enumeration, port forwarding
 tags: Windows, HTB, enumeration
 ---
 
