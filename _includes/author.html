@@ -1,4 +1,6 @@
 <div class="author-box">
-<img src="https://www.hackthebox.eu/badge/image/169983" class="author-avatar" />
+{% if site.plugins contains "liquid-md5" %}
+<img src="https://gravatar.com/avatar/{{ site.email | downcase | md5 }}?s=256" class="author-avatar" />
+{% endif %}
 {{ site.description }}
 </div>
