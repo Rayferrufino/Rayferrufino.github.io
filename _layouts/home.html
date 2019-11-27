@@ -4,7 +4,6 @@ layout: default
 {% include author.html %}
 {% assign posts_count = paginator.posts | size %}
 {% if posts_count > 0 %}
-<img src="https://www.hackthebox.eu/badge/image/169983" alt="Hack The Box">
 <h1>Recent Articles</h1>
     <div class="post-links">
       {% for post in paginator.posts %}
