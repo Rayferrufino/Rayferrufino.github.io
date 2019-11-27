@@ -25,13 +25,13 @@ dash:
   # generate social links in footer
   # supported colors: green, red, orange, blue, cyan, pink, teal, yellow, indigo, purple
   social_links:
-    - url: https://twitter.com/bitbrain_
+    - url: https://linkedin.com/in/ray-ferrufino/
       icon: twitter-square
       color: cyan
     - url: https://bitbrain.itch.io
       icon: itch-io
       color: red
-    - url: https://github.com/bitbrain
+    - url: https://github.com/Rayferrufino
       icon: github-square
       color: purple
 
