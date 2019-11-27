@@ -35,7 +35,7 @@ dash:
       icon: github-square
       color: purple
     - url: rayferrufino@gmail.com
-      icon: envelope
+      icon: envelope-square
       color: yellow
 
 # Build settings
