@@ -42,7 +42,7 @@
   &:visited,
   &:hover {
     @include themed() {
-       color: t('foreground-color');
+       color: #50bd6a;
     }
     text-decoration: none;
   }
