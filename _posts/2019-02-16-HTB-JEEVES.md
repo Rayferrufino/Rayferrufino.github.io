@@ -18,7 +18,7 @@ PORT      STATE SERVICE      VERSION
 50000/tcp open  http         Jetty 9.4.z-SNAPSHOT
 |_http-server-header: Jetty(9.4.z-SNAPSHOT)
 ```
-2. We Dirbuster to find out the directories running on port 50000
+2. We use Dirbuster to find out the directories running on port 50000
 ![](https://lh3.googleusercontent.com/_afaZLU2r7PSsRJNlxpfM8UkyjsVbg6g8-1q85Q31pA-5CB_W0-cBRwACFTsE3cod1P26WJo78fFhm3EfoTMnTRoUzNeu223cJ20e1OGONEm8cr4S32otLqEsOEmdKU-va4vkY8eYdc1yCsL0H5tTxNEs5G595qg540jwIVNptwK2XqpEf3jtUgdMY7dt-wPnFLbydXqY05RKIRAvS5uCc9gzmYazY2XIDJY4ytIXmW-z0rGHLZeYilfeoZGdkaY5ei7P8ja2Pv2SL4aPq2lINQL5zS7_H18WLcY-pGSGe9yooMTpZlH5W45fsqn5eA4daF0OZ8bGnSBJJeJTyJT05KXz-CGwsJtEWxmbyTJzrN0IhkEE5nZl0XJ1gPTzuv4kNDFP1OvDefKYTLL3fKxJZZoVKtW7SJAdye7Ul6NimfGXyGvGnrdJIi--lQpKuS9wilTDRAHw6R7pWc13AjelcsL0LtUc-1s8tDxV02KJm-KdHXEDXUviW5n915DxNK8gfRnCdnR5i9qtiz0rqaB0F6kJ114EhwwC4qMKfnyu42rMQbGrebQXGLQRqY2-O41EG7Fp5t_NgJFq3Ulin7nbT3NzRfqM8N5SuCwPYhCqQBlsWF824xZzqonarSURAPU0hAoBmsF-UWXB0HfV9m11tdDJU-OycSAgW5daX-ty4aSU2LiT2a7IvA=w584-h209-no)
 
 3. /askjeeves/ has a Jekins app running
