@@ -29,8 +29,8 @@ disqus:
   # generate social links in footer
   # supported colors: green, red, orange, blue, cyan, pink, teal, yellow, indigo, purple
   social_links:
-    - url: https://twitter.com/bitbrain_
-      icon: twitter-square
+   - url: https://www.linkedin.com/in/ray-ferrufino
+      icon: linkedin
       color: cyan
     - url: https://bitbrain.itch.io
       icon: itch-io
@@ -38,9 +38,7 @@ disqus:
     - url: https://github.com/Rayferrufino
       icon: github-square
       color: purple
-    - url: https://www.linkedin.com/in/ray-ferrufino
-      icon: linkedin
-      color: teal
+    
 
 # Build settings
 theme: jekyll-dash
