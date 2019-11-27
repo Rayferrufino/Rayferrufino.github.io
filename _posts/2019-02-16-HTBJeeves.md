@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "HTB Jeeves Windows"
+decription: Jeeves is a windows medium difficulty machine from hack the box. Tools & Techniques: pass the hash, msfvenom and john 
 tags: HTB, groovy, rottenpotato, john2keepass
 ---
 
