@@ -1,11 +1,9 @@
 ---
 layout: post
 title:  "HTB Friendzone Linux"
-description : 
-tags: 
+description : Great for practicing DNS zonestransfers, a lot of trial and error for getting user!
+tags: HTB, DNS, ctf
 ---
-
-# HTB Friendzone
 
 # Recon
 Nmap Scan
