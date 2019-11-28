@@ -1,3 +1,12 @@
+---
+layout: post
+title:  "HTB Bastard Linux"
+description : 
+tags: 
+---
+
+# HTB Bastard
+
 # Recon
 Nmap scan
 ```ruby
