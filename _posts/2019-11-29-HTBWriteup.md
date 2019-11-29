@@ -37,7 +37,7 @@ I utilized a widely adopted approach to performing penetration testing that is e
 - Information Gathering
 - Service Enumeration
 
-**Exploitation**
-**Privilege Escalation**
-**Reporting (This technical report)**
+1. **Exploitation**
+2. **Privilege Escalation**
+3. **Reporting (This technical report)**
 
