@@ -1,8 +1,6 @@
 ---
-title: Netcat Shells Cheat Sheet
-layout: post
-category: Red Team
-date: 2019-10-9
+title: "Netcat Cheat Sheet"
+category: Useful cheat sheet for netcat..pentester swiss knife!
 ---
 
 # Connect to a TCP Port
