@@ -4,7 +4,7 @@ title:  "HTB Chatterbox Windows"
 description: Tools and Techniques used, msfvenom, windows enumeration, port forwarding
 tags: Windows, HTB, enumeration
 ---
-# Chatterbox
+
 # Recon
 Nmap scan
 ```ruby
