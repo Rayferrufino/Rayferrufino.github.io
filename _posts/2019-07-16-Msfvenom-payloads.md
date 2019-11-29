@@ -1,7 +1,7 @@
 ---
 layout: post
 title: MSFVenom-Payloads Cheat sheet
-description : A handy list of payloads for pentesters
+description : A handy list of msfvenom payloads for pentesters
 tags: Red Team, msfvenom, cheat sheet
 ---
 # List payloads
