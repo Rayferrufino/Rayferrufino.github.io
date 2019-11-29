@@ -1,13 +1,10 @@
 ---
 layout: post
 title: TTY Spawn Shell Cheat Sheet 
-author: Rayzer0
-category: Red Team
-date: 2019-7-16
+description: This is a collection of one-liners commands that will allow you to spawn TTY shells!
 ---
-
-## This is a collection of one-liners commands that will allow you to spawn TTY shells 
-## very useful for escaping jail shells and when you're dealing with unstable ones too. 
+ 
+## very useful for escaping jail shells. 
 ```perl
 python -c 'import pty; pty.spawn("/bin/sh")'
 ```
