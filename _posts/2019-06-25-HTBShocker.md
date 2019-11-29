@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "HTB Shocker Linux"
-description : 
-tags: 
+description : Enumeration reveals the shocking exploit!.Root will shine as a pearl!
+tags: HTB, perl, shocker
 ---
 
 # Recon
