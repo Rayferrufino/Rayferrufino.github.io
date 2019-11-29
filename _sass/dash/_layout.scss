@@ -82,7 +82,7 @@
 
 .post-title {
     @include themed() {
-       color: t('foreground-color');
+       color: #e91e63;
     }
     text-align: left;
 }
@@ -91,7 +91,7 @@
   margin-top: 1em;
   font-size: $base-font-size * 1.15;
   @include themed() {
-     color: t('foreground-color');
+     color: #ff9800);
   }
   white-space: nowrap;
   overflow: hidden;
