@@ -5,7 +5,6 @@ description : Techniques used, cron-jobs hickjacking, sudo permissions
 tags: HTB, linux, python, sudo, cron-job
 ---
 
-# HTB Bashed
 
 # Recon
 Nmap scan
