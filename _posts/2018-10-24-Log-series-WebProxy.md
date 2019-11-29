@@ -1,9 +1,6 @@
 ---
 layout: post
 title: Log Series 5 WebProxy
-author: Rayzer0
-category: Blue Team
-date: 2019-5-15
 ---
 
 ## Bluecoat proxy logs
