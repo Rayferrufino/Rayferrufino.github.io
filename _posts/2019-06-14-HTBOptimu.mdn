@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "HTB Optimun Windows"
-description : 
-tags: 
+description : Nmap, Nikto and windows-suggester will be sufficient to pawn the box! 
+tags: HTB, nmap, metasploit
 ---
 # Recon
 Nmap scan
