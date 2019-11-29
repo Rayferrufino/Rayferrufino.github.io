@@ -33,9 +33,11 @@ The following recommendations should be applied.  The CMS Made Simple applicatio
 # 3.0 Methodology
 I utilized a widely adopted approach to performing penetration testing that is effective in testing how secure the Hack the Box Labs machines are. Below is a breakdown of how I was able to identify and exploit the target system.
 **Reconnaissance
+
 - Information Gathering
 - Service Enumeration
-**Exploitation
-**Privilege Escalation
-**Reporting (This technical report)
+
+**Exploitation**
+**Privilege Escalation**
+**Reporting (This technical report)**
 
