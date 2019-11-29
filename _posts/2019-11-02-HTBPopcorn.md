@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title:  "HTB Popcorn Linux"
