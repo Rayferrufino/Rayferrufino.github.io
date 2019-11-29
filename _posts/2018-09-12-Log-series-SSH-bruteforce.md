@@ -1,9 +1,6 @@
 ---
 layout: post
 title: Log Series 6 SSH brute-force
-author: Rayzer0
-category: Blue Team
-date: 2019-6-05
 ---
 
 # Valid SSH session Login
