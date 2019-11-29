@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Pentest Report HTB Writeup Linux"
+title:  "Pentest Report Writeup HTB"
 description : I was recently asked to write a report for a pentest job. Company name omitted :) 
-tags: 
+tags: HTB, pentest, sudo, perl
 ---
 
 # 1.0 Penetration Test Preface
