@@ -1,9 +1,6 @@
 ---
 layout: post
 title: Log Series 3 DNS parsing
-author: Rayzer0
-category: Blue Team
-date: 2019-3-17
 ---
 
 1. What are the field headers? 
