@@ -115,7 +115,7 @@ You can also escalate this machine using the infamous exploit dirtycow too.
 ```ruby
 'Dirty COW' 'PTRACE_POKEDATA' Race Condition Privilege Escalation 40839.c
 ```
-
+# FLAGS
 ```ruby
  ROOT  "f122331023a9393319a0370129fd9b14" 
  USER  "5e36a919398ecc5d5c110f2d865cf136" 
