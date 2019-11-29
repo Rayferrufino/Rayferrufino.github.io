@@ -3,7 +3,7 @@ author: GitHub User
 email: rayferrufino@gmail.com
 description: > # this means to ignore newlines until "show_exerpts:"
  I enjoy solving problems that make me think outside of the box. I like to engage and participate with others in solving complex
-challenges and task . I'm a curious person and motivated individual who likes learning new things from others
+challenges and task.
 show_excerpts: true # set to true to show excerpts on the homepage
 
 paginate: 6
