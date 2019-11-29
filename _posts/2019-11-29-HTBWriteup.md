@@ -81,18 +81,25 @@ We find out the name of the application running. CMS Made Simple.
 Let’s google the application and see if we can find some exploits on Exploitdb and start our exploitation phase. 
 
 ### 3.3 Exploitation
-Vulnerability Exploited:  `CMS Made Simple < 2.2.10 - SQL Injection`
-System Vulnerable: 10.10.10.138
+> Vulnerability Exploited:  `CMS Made Simple < 2.2.10 - SQL Injection`
+
+> System Vulnerable: 10.10.10.138
+
 ```ruby
 User Flag: "d4e493fd4068afc9eb1aa6a55319f978"
 ```
 > Vulnerability Explanation: `An issue was discovered in CMS Made Simple 2.2.8. It is possible with the News module, through a crafted URL, to achieve unauthenticated blind time-based SQL injection via the m1_idlist parameter. Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')`
+
 > Vulnerability Fix: `The publishers of the CMS made simple recommend upgrading to the latest version of their application. It can be 
 > found here: https://www.cmsmadesimple.org/downloads/`
+
  CVSS v3.0 Severity and Metrics:
 > - Base Score: `8.1 HIGH`
+
 > - Vector: `AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H`
+
 > - Proof of Concept:  `Python Sqlexploit.py –u http://10.10.10.138/writeup/`
+
 - Screenshots:  
 ![](https://lh3.googleusercontent.com/LrJEHKmQjTVeoqDPNwXjS-yrVB9AIzn4BWFYaWkjxjlsjI2Fg_imslxW5iTjsYtHdkIpsAkk9SD6yRU3VRL3CS8QQJBxOZhdXZGlKEkSJgTRvs4I9uiQmYrpoXtAQ4uFSnoS11B_07KbQEl9R06rOh8togyk0j1baVt3WTDFxElsu75pLFQFKB5mR6D08EdVg3seE2Bf33iwFC-YZS-BKmZb0icD-Qaognc_hhQrkbsaLQvuMJOPQLAks6Yi4Q4jdo5r-1aIE0gfFCBfB4U7h0ZqMpe_RvNEivB5nqKpzidZ_QEASRx3LneTGyVJUBAE62kT2Uo1TxLZgth0TI-F97gfv6w0WRZ_zttXkOKjU_oHBNWEWlhEzhNdWIKJGfcWtkZFujTIYo2sZYe0WOyyDEEAD36Ydj98XH65H3wyhEBDHhihNWD3EZIG5AIvCc4GK1dDVaXB7oH-sLmReyPNctutDY6c4oV8zEmCHxWqiywQVbAVBtD_frbozmD0n2GzWektQ8RMFim3TjJC6Y4YcsUpxc7zSEsHITkTCH-X3fhWrBJxihTdw2Fj-QgRD4PrVRBkm02_67vnJui6io0I3_W5uHhDkA7F2_TiK0HIZvw2nj2FUFqOwJIbNZPcxnKVmWQq8ZOeWFo5Yxi8RzzdT7qD0xfNTtGaPmdtGrgyjQsQ7XP_eFXlddc=w921-h362-no)
 
@@ -119,23 +126,33 @@ However user `Jkr` does not have sudo permissions, so we need to escalate.
 
 ### 3.4 Privilege Escalation
 > Vulnerability Exploited: `Elevation of Privilege using PATH priorities`
+
 > System Vulnerable: `10.10.10.138`
+
 > Root Flag: 
+
 ```ruby
 "eeba47f60b48ef92b734f9b6198d7226"
 ```
 > Vulnerability Explanation: `There is a cron job named run-parts that runs as root every time a user logins into the system. The run-parts script runs all executables scripts that finds on the specified directory. However the run-parts uses relative path instead of absolute path allowing a malicious hacker to hijack the path and modified the script with a reverse shell.`
+
+
 > Vulnerability Fix: `Using absolute PATH for scripts that run with root privilege.`
+
 > Severity: `Critical`
+
 > Proof of Concept: `We create a run-parts file on usr/local/bin which will trigger a reverse shell when the run-parts script tries to execute looking for is binary file on the relative path from left to right.`
+
 ![](https://lh3.googleusercontent.com/9XzrZwOpgm3ro-XRO8BHYETkngPaxAfe_lr03Vr1lDje2D9pK0bi5nHO3GAASNmCT8Hl7tmhsNBqh3SU_aO6kwHKPRY-z_Ey2h4H49Y9LoSK-Uu8kZj6zFGo7KSM709ZSoH02WcijdU9tSDgiG6Oa38z-htjx2BcbglNpRoYFz_evQqSvP7qgKlr24Qrm8onMfmJNFGackPln_xE5jm_yz9CDNJzEkNoo7SRFyAsNRRuEzJ7k9mLXv5Ps5cDqzS1an1FRab9DuAymygFf_qvxm9TClM4XtOXnduqBfWkeAEXeyWpSRtCKYrnmP7z_n2xF0AutGM9ELKgWajsK3lIhiFROY7_I9pFOE7GOvBvWW94jUvadxUDkbzYIRqTqAiGFONNpKaMPHtRX_ZnBLaqWG9oDmeDscz6pC0m8N4sczb1AFM_mf9ABabX7Wht3_suRtVnsgd1j6sjCe2ATrsEXgwkD1ACDaBb9rd8v9q5jLASh5A3fvoLl_dMFMa1aCXqrzohMXCIMj2Ny_MChzHI-GnH1JH-q9zsdwrppMJ_rGVdnUGeUIVUI80J-8jdHQibDtc4KaAi_Ov6Yl61A4yZ4A7bQpPQMNqGjGT6u_Dfah9ub-vFgPbj5FsmMqCqsQhqyPo5VtoAgw4iaiwUegXkVyqX1umHPKz3RXUIfJnH-Y_YyuPPPE75_4c=w1232-h92-no)
 
 > Screenshots:
+
 We download and install PSPY tool which help us to monitor the processes that run as root on our target machine
 ![](https://lh3.googleusercontent.com/Q7TqFzeiyG6uUEEs4w--_9SEeCtFRe112j1FDECHHWm2ctk5G7iWWksIS1DuUSHxqp4g9gFB5YkM6xS-jcRWFq64nvrISpMr1UYIG5uNJgKVwQnDaBwdWulac2BRIfemqQEJQ6NdyFrtoM_EuIMnXffI1G9AuKBKektRVf-Cq2mdPZknj5Gn42TlyW8tvLnIheT2xg5QRZuo05SPnlt4lLF7yeVcyerDIPuEVuvtTXhHzBYUGkk4bT3XQgyZK62PfscWRxD9FaooYQ2-9l1OLvxDR9WbboQ7eKNWwCi3_35cLI2YFp4h9xG5ffGQSkAVj8DwO-yyf2wfXHszbMPKzeL-7CbMzUuYByPdnYFdvoghQM_N3njHJbGxyAyfb7gdrFYGQiBDxiwZMFb2DnMV0YeUVocEfu-chHyBMfwCW1_Tl4wU79eDqaLzSgXNpcmr-NNE-iKJsDInBCRawdDy7eVlBMxaqVNpgnd1u19jzSRZWEV8EOvs169WFDG86-Ba39AHFfcdpqsoHG0H2EU7TsH67uqv4EwNLOyKa_si8hd0gNuOo-imqBHVarEnqBK7FGKCLD9FjyTDk9yp8uO36BKkd74mtzIIm4BBs7-c7JnY5xV90iSojTvmYeN-xnC93bBp887txRsWiPPEXaSB2F9DP7hFB4CUOdqWkWGfPujguU5uBAjeheM=w1006-h330-no)
 
 ![](https://lh3.googleusercontent.com/YNlZm5zISnUogyX0D8xRl4y1WEyBYXshHt9duuCoGvuaEfLEpp-vt4yNubquSYhNwySwXKQkr5qQhS4jSQL6mqyDL-YjNaXvVbKJz1bPlv9md9PrXZefteT70R3q-d_xW2F263SPO08464wbNYX9tiSrzrK4Zhc-3_4WW2u8CJvQJkVJ3MxWInE5xXBvxyyDp1NEUsVh8PhC8I2aSzz9Dx1y847uN234uhApCBcy2vBg5HSNhCnLgaarevzmYH-GZNEzc8-kkqVlfydEdTpRsf9gqIje_LMo4cPXZPsx5o_cWNOLNfvMveZhid4duWXvSIfeUlE3PeVZxUtI-cQpzIjpmrb3vC2-a4RzGLXqwXkbIKqD33jnoj9EdpjuHkEB48X5MHg14lQKNrQGC71zQYEfW5jGLseYXiYAUa2D5nNvKrhUmVBmq5ntqSCd4c4jY-f-e6DGKAFoM6ZimffUG2Y2WUDsWd8Ah0FL3H_XvvJ_yC8RpyYIsl3-b_oGtQebjNw57xeyGGMqN0WRh_MjutUj53NOITAfF3mn--yjPo7OERHN9oT0XIgHZdKizTrvJz_abk5OaoRiWzTrivnopaw-VCz4JDR8k-5LNhybB5vtwB8T1ubJipBWtGpRg45_ExSlj0qV83dQEImT488GZOnUL54raGv6uVhB0g8MaD3m4Eo6DOeuLrg=w624-h150-no)
 
+![](https://lh3.googleusercontent.com/j5FXAdxMIt6q1W2E9yB4pailwh5HeRlLGXjMdb-1IIZnbxJ-rWp20qAz7H84zXcTwx-0boyeJOct0gyH29knj62UhrcM2FUhUIsDNU6SsbkHtBwQJyD75gKyWCbntUVj-XJp4V9J65De_5jBMTE4z8sPIAP7RF9UqFUY-QPH8qAOwc3iYW5gkB0JLbmUpy4BLtxat0U5jQt6clfxybQd2eR6pzWcvk3wa19mRlBD0D4QLQvVIpgFfO32DNjrHky83Y_BpWvHoiIa5jBCbhXyrL2BGqyqP5YUhgCldk4ALNaEmkvhhYQTdPgVO2hj_g6UpHmwc9e9N4H4zsWJeFWvmu5ZpI9i430HOPd3c4DioTZ1o5sH5M6DoCb-lbsX_hJhBQyRkW5qbikPc2B-YE911bmdHw5Gxdjv1u02wwPtaZnuXPe000KC3xjoSEujcRsM4VVyDvPUHTiyzJFpyxEg4sigpPzclv_-EbwKgPFkowelDnbCxpdbxR_OvnefrXqKoDjkiBtn1Qr-uH6MmqWAM333otTp7xE23A9B2qSoo32xf4VAmIud7vqJ-yrbZ1IktLaevztfSWRoIe9bFCWHClj36AXLO42C2Igl8tAnoe_zFO6qGNjzHAMxEnlWrqGUNWZvv1trasW7bgliPkDOxNK_zRDMAaTUDIAJ3EF6_tk1gmYbyGFptOU=w1316-h251-no)
 
 
 
