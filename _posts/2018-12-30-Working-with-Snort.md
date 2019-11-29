@@ -1,9 +1,7 @@
 ---
 layout: post
 title: Snort Exercise
-author: Rayzer0
-category: Blue Team
-date: 2019-4-02
+
 ---
 
 ### Use wireshark to identify what types of behavior are happening in each of the following pcap samples
