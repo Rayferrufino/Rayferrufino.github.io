@@ -2,8 +2,8 @@
 ---
 layout: post
 title:  "HTB Popcorn Linux"
-description : 
-tags: 
+description : Burpsuite and linuxenum is all what you need to pwn Popcorn!
+tags: HTB, dirtycow
 ---
 
 # Recon
