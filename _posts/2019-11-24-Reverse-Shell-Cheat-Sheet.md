@@ -1,9 +1,8 @@
 ---
 layout: post
 title: Reverse Shell Cheat Sheet
-author: Rayzer0
-category: Red Team
-date: 2019-10-20
+description: A super comprehensive list of web shells for Red teamers!
+
 ---
 
 
