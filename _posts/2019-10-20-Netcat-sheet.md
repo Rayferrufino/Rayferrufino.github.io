@@ -1,6 +1,6 @@
 ---
 title: "Netcat Cheat Sheet"
-category: Useful cheat sheet for netcat..pentester swiss knife!
+description: Useful cheat sheet for netcat..pentester swiss knife!
 ---
 
 # Connect to a TCP Port
