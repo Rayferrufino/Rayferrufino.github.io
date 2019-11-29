@@ -1,7 +1,8 @@
 title: Rayzer0 
 author: GitHub User
 email: rayferrufino@gmail.com
-description: > Hi folks! Welcome to my personal blog where I write about pentesting, cybersecurity and occasionally about videogames :) 
+description: > # this means to ignore newlines until "show_exerpts:"
+  Hi folks! Welcome to my personal blog where I write about pentesting, cybersecurity :) 
 show_excerpts: false # set to true to show excerpts on the homepage
 
 paginate: 6
