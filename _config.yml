@@ -2,8 +2,8 @@ title: Rayzer0
 author: GitHub User
 email: rayferrufino@gmail.com
 description:
-> Hi folks! Welcome to my personal blog where I write about pentesting 
-> and cybersecurity :) 
+  > Hi folks! Welcome to my personal blog where I write about pentesting 
+  > and cybersecurity :) 
 show_excerpts: false # set to true to show excerpts on the homepage
 
 paginate: 6
