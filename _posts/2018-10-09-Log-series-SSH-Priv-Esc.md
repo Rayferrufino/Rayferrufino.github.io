@@ -1,9 +1,6 @@
 ---
 layout: post
 title: Log Series 7 SSH Privilege Escalation achieved
-author: Rayzer0
-category: Blue Team
-date: 2019-6-06
 ---
 
 # SSH Valid login and  SUDO call env
