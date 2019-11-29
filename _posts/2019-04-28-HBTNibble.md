@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "HTB Bashed Linux"
-description : 
-tags: 
+description : Great box, bit ctfish, again SUDO permissions get you root!
+tags: HTB, sudo, python
 ---
 
 # Recon
