@@ -5,7 +5,6 @@ description : Knowledge of PHP comes handy,other than that enumeration is key!
 tags: drupal, php, session-cookie
 ---
 
-# HTB Bastard
 
 # Recon
 Nmap scan
