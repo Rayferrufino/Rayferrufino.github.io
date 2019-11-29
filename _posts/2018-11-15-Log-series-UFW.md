@@ -1,9 +1,6 @@
 ---
 layout: post
 title: Log Series 4 UFW 
-author: Rayzer0
-category: Blue Team
-date: 2019-4-08
 ---
 
 # Firewalls
