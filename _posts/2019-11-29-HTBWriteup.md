@@ -80,24 +80,59 @@ We then inspect the source code
 We find out the name of the application running. CMS Made Simple.
 Let’s google the application and see if we can find some exploits on Exploitdb and start our exploitation phase. 
 
-> - 3.3 Exploitation
+### 3.3 Exploitation
 Vulnerability Exploited:  `CMS Made Simple < 2.2.10 - SQL Injection`
 System Vulnerable: 10.10.10.138
 ```ruby
-User Flag: d4e493fd4068afc9eb1aa6a55319f978
+User Flag: "d4e493fd4068afc9eb1aa6a55319f978"
 ```
-> Vulnerability Explanation: An issue was discovered in CMS Made Simple 2.2.8. It is possible with the News module, through a crafted URL, to achieve unauthenticated blind time-based SQL injection via the m1_idlist parameter. Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')
-> Vulnerability Fix: The publishers of the CMS made simple recommend upgrading to the latest version of their application. It can be 
-> found here: https://www.cmsmadesimple.org/downloads/
-> - CVSS v3.0 Severity and Metrics:
-> - Base Score: 8.1 HIGH
-> - Vector: AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H 
-> - Proof of Concept:  Python Sqlexploit.py –u http://10.10.10.138/writeup/
+> Vulnerability Explanation: `An issue was discovered in CMS Made Simple 2.2.8. It is possible with the News module, through a crafted URL, to achieve unauthenticated blind time-based SQL injection via the m1_idlist parameter. Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')`
+> Vulnerability Fix: `The publishers of the CMS made simple recommend upgrading to the latest version of their application. It can be 
+> found here: https://www.cmsmadesimple.org/downloads/`
+ CVSS v3.0 Severity and Metrics:
+> - Base Score: `8.1 HIGH`
+> - Vector: `AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H`
+> - Proof of Concept:  `Python Sqlexploit.py –u http://10.10.10.138/writeup/`
 - Screenshots:  
+![](https://lh3.googleusercontent.com/LrJEHKmQjTVeoqDPNwXjS-yrVB9AIzn4BWFYaWkjxjlsjI2Fg_imslxW5iTjsYtHdkIpsAkk9SD6yRU3VRL3CS8QQJBxOZhdXZGlKEkSJgTRvs4I9uiQmYrpoXtAQ4uFSnoS11B_07KbQEl9R06rOh8togyk0j1baVt3WTDFxElsu75pLFQFKB5mR6D08EdVg3seE2Bf33iwFC-YZS-BKmZb0icD-Qaognc_hhQrkbsaLQvuMJOPQLAks6Yi4Q4jdo5r-1aIE0gfFCBfB4U7h0ZqMpe_RvNEivB5nqKpzidZ_QEASRx3LneTGyVJUBAE62kT2Uo1TxLZgth0TI-F97gfv6w0WRZ_zttXkOKjU_oHBNWEWlhEzhNdWIKJGfcWtkZFujTIYo2sZYe0WOyyDEEAD36Ydj98XH65H3wyhEBDHhihNWD3EZIG5AIvCc4GK1dDVaXB7oH-sLmReyPNctutDY6c4oV8zEmCHxWqiywQVbAVBtD_frbozmD0n2GzWektQ8RMFim3TjJC6Y4YcsUpxc7zSEsHITkTCH-X3fhWrBJxihTdw2Fj-QgRD4PrVRBkm02_67vnJui6io0I3_W5uHhDkA7F2_TiK0HIZvw2nj2FUFqOwJIbNZPcxnKVmWQq8ZOeWFo5Yxi8RzzdT7qD0xfNTtGaPmdtGrgyjQsQ7XP_eFXlddc=w921-h362-no)
 
 We download the python file, chmod it and run it using the –u argument for the url in order to launch a blind SQL injection attack on the web application.
+![](https://lh3.googleusercontent.com/_jve3UJ_BEM2JnJSP-g7usQCgSFudtIyIeBAf-ptXGH_6XR2_NfZ3l19ti2YGQg8xVSjKzyWSUNr6l_orBBrERysL_G0eBxrW3H9W0iYxiMKSvMXSftoTmmbPE8Wj1BFgXCn16yjDk2ULS7yXJ0em0X47bQAvUr0vJAawG3VRb6sCVCw4KCi-qNwWHlYaIM40OdHtu8pWhTQhPBpw97w4JGEbTFy_23uFwk11nGdzuc2tBfSLKa3mvkmJpyVc0XeqPyhtSy2Mtjt_4tv0I0W19a7jbYkhsl7hIU018Gq-e4DaURULtX8WkT53QpviJuOaDMBUWDBahpQ5ohS7yQXeGUC5DqPxc-S-wVU0hgr71FRP5VTYrz-NisYEJDBJB4xmwFRPKDmU50N804k8PpFQTX9oG4iHvpV5A8rt5zPIYSoAOoKz120GVlS-d80sjLokf9E4VnOJy_8-XedRLqPa-ZZIQPu7jteWX354mHq5GOorw9fSPICLJ9kfwedDjOIjnvH0AUPTR2VHtwzZu3mZQgCp9gTZwcP2SgI3Taq9vSBT_94xRcCEJPZ8deHdqJY2I0b1_G0Z1loXryLrTgocelqsZrwoEw3JI1wUtDtMSsWfp1Zi8tTONzdJX5g7TTsIZDKD2McLq2FXtTT1MNk0a5_yGxwpBOYDbtE6Mv7TX59DVXwgNs8xJs=w787-h43-no)
 
 The exploit obtains the following sensitive information:
+![](https://lh3.googleusercontent.com/YerbTmZEG2AWEDtYjHfBmHIt3SVJ01FoGPLqZkAcEFxJuEeLjN-1Nxt9hEtf7KdZQAkBO4SOmOVP2aKpWLt_CzdgBzTskhT2LXZWH-SpzUEth31zfEds08CeUOeJI-AzRuqCQWi-NeLarhGiSa2fz4fEkyrBQPxtuzLZse7u1lGF1RADSTGY2WCcTgHyVEyZKxOKxgSzAIx8r49KQeawUqX4Z3rGWwPbjcnoKgzVv935YiNflgQq5DBldWkOXcztuAL6L2f-fO3_Hj0bvd2OeCbn6ctHnTe-aNIQy7V7zqZ09WUsFekCsDuJ0lI78s1PeBndXCy6wqql8eKuTggub1P2_29zaltU6NhL5wPgnQ0ldm8HHHfejRj2YBUxO_BNY6hxf6UC2RKrvV-fazEnION_IpiXvba0RSDl9hfv5428hQoUGB7znB0rxNagJmOI4wyzZYnMdaXEI4msyeP0agddt2Wyqfbou_69eoYouQbdboOqGvQxWiAmnXuITRo2FjK2naog9cB1mSZMZCXrAUVtRR7hQ9tn_jO7Ur0IRxkQdHy8l6IwkU1sbj8bsbyB_0lMevopIdczcK6xnYZWtyoaQr06rBCsch9RF9EIBCpXd1v4Y3s7g2ZmxALKweCrj-ADnqscFrZTyJc4VifqwiqDouXDUYeWPr69fs4twKHD2W6heUIckeA=w783-h229-no)
+
+We use an online decoder for the hashed password and the salt: password + salt
+![](https://lh3.googleusercontent.com/kMRieFI36ABkswVFpOOSQxfT1BD4vVfYe8xA8dax_YRXvlFRCoZsB9es8QHv05I5_-8yQsS2In27Q6lNrhhEP7WzUzMNcrkWSc5z_oF9f38cj349T6jEUB2OZAdkK1sRDw9I4k-0wwCJZiGBsxPSsUM4sxhTZgDoRCWslHpJBSHjXjVRPFk9CjYnbea6DfxE7CitRkTAK5jnxDiAB50PTI4hCOxE3lufRjTSSK_13u4uNGhCpFkaaM19bHDBK-ro-ZfclFXjRz5WIpbjumGzAyucVm4uK9DOq3P0z08BYKck2oYs1yLRU9QwlYHPhH-huhxM2RuHltEgmgxnqyb9XdMWyZtYCcRdhAEjlUPSZdgSfYSaBAx7jFbhFwOU6mYQ3Oc9j5w7NVCjSsBWypzIxhiJwfY71r7Hf36YN1P08yYa5-fiy2XmUAfLrbRZXU_pFdzLkkiHEBUHQHoE9WLQ5GS-5yE_ze8PDLgv918zuIyepcS1VHalz6UEmvU13o2V4l1SOXqfbFC7_z7jOfXcevcXvhkqE2t9BnEQVFRMJkP4FeG2xfpMCLVd2ZHwJYvvtsOXHDz_E7D2zS9kc6FbKlQ0bPfwpWFvutoMghRO4WGKUYAz0y2JCuBBSceWesFUtO77tOSUgLKDMqe45qEmi9He-_ubrIwhSfq_XWeJ6rKOnYGrHY8RXU8=w1021-h301-no)
+
+We decoded the password: 
+```ruby
+raykayjay9
+```
+We used the obtained credentials and try login on port 22 through SSH
+![](https://lh3.googleusercontent.com/GSRiDG4e_psrZPyskjOchPGt1RMPa_gBa7SNMQGTPaI8u8K0Ma5jnelWjXFPrQnLRWkkTgTb_z8b0NWjbMHPRt1QV-Lcj_MZRf3OocTcsST9Ub2-KcuVl0tgOJ35P62jWjgcr1hlnfhXF87T0JHJuvS8KUEKEYPiNr0Wgo-kp5DmLCiZ2gXPqW_cuyeY3z5ZxJqnlF8EtFQif_S5x5av4tEeYj2JPPIcygWt1Ui_2iaZAFXQyIHdj_jtQkKBLqdnz-yCBWlNLxQcMHLHvoyOS6CNGwO3MkCDhKZAogKgBomtofO3zGnFPEMuFqNwULVdBcQzC0f8EQrLLxOiebKEU45uJD1GKzCgCFjG-932cm9yljBdkA9g0WNK5r583tTTczBclev2VM6KF4h-w0P6ku5rApOSnbgdpsQZfqXyP7DxQdkpq7AIQJPauIhbHpWpGHi7XX-7DH2pofsktKrA9CA8DoWKva3rXaDwIl6oUb0lgIot7HV_r0cdsYZ_K__3a4krJtSYiMu-pKSnkdVPLy7Wic8wBTEPAiojS7n9cfDM5O12H66o_Z7_tNsOYl9YewQvP3o7aBMF5HBQjRCagXOYeOkslYyfgfriClBLgWubru2sUVIDkKxAy0Hgpol4bFUWd3Tc92vKDwG6kqZS9elLIJ3TNPTS1Wi2nQg0hSJXFfIgf9-rAvY=w1166-h504-no)
+
+We were able to get a SSH shell and the user flag. 
+![](https://lh3.googleusercontent.com/aSptxXf25CYoironaNbU0V6dV652Vh0brlrOVTRXJkP3ay4zwLoa_jDI3--SM3eIdPK7d6l1bTwdqctZpDSOpHPgTUb3qia5L-b7z7eUAjWsjk--mMHg5GKvbvkxlrx5NLHgaHTzXV2X1VVtQYriU9Mcq_YeZ4r4GAUP5jxFyluTg0RmJH_CRRAzW5pfSQsNWhlRDwbu3uVmtjlNNoKVo-NHaj__QACCUXHRKy5fwLgfD4Kyx46w5cpqtpRCvQBLn0SPyHzVVDhB_272OF-iPBXRlCD7UpA051xnfNGTQ9Tj8uBGH-UXIWWFi_tYREmjANQVcw5kpsIISlcuPiKFB6jx54swHo_1OMZsy9AN5HmgP3S-Xftk9DFTbPeLvw7139Q7cK5xHRUtH1_uhBe94pryC_5lDdX62eoAqMowSUrizpEr2Xkdjrj6ZmFJcmj6tXqaQKnXgWhwZ6m4DORBDGgIn_suGDXSU7UYj4fSoiwiCXuVTsAHzZaxjB2JOAWyb6zM3VPD3WvtL7ytvd56EtQDd8TxifpOX0oMvCsfMZQHI_lTCGR3T85f9u7NAX-NNVnyKRxpizBVKdeLeYoLY0al_K1FEjewycYJ0ENQG62pT_JUeKS0DGk7vWsAB_pF7cj-rV9-v10u3eOH4BOBV9nmP0_eiHKh9CWNmWDeO6XrmFgwCQOmlfA=w349-h109-no)
+
+However user `Jkr` does not have sudo permissions, so we need to escalate.
+
+### 3.4 Privilege Escalation
+> Vulnerability Exploited: `Elevation of Privilege using PATH priorities`
+> System Vulnerable: `10.10.10.138`
+> Root Flag: 
+```ruby
+"eeba47f60b48ef92b734f9b6198d7226"
+```
+> Vulnerability Explanation: `There is a cron job named run-parts that runs as root every time a user logins into the system. The run-parts script runs all executables scripts that finds on the specified directory. However the run-parts uses relative path instead of absolute path allowing a malicious hacker to hijack the path and modified the script with a reverse shell.`
+> Vulnerability Fix: `Using absolute PATH for scripts that run with root privilege.`
+> Severity: `Critical`
+> Proof of Concept: `We create a run-parts file on usr/local/bin which will trigger a reverse shell when the run-parts script tries to execute looking for is binary file on the relative path from left to right.`
+ 
+> Screenshots:
+We download and install PSPY tool which help us to monitor the processes that run as root on our target machine
+![](https://lh3.googleusercontent.com/Q7TqFzeiyG6uUEEs4w--_9SEeCtFRe112j1FDECHHWm2ctk5G7iWWksIS1DuUSHxqp4g9gFB5YkM6xS-jcRWFq64nvrISpMr1UYIG5uNJgKVwQnDaBwdWulac2BRIfemqQEJQ6NdyFrtoM_EuIMnXffI1G9AuKBKektRVf-Cq2mdPZknj5Gn42TlyW8tvLnIheT2xg5QRZuo05SPnlt4lLF7yeVcyerDIPuEVuvtTXhHzBYUGkk4bT3XQgyZK62PfscWRxD9FaooYQ2-9l1OLvxDR9WbboQ7eKNWwCi3_35cLI2YFp4h9xG5ffGQSkAVj8DwO-yyf2wfXHszbMPKzeL-7CbMzUuYByPdnYFdvoghQM_N3njHJbGxyAyfb7gdrFYGQiBDxiwZMFb2DnMV0YeUVocEfu-chHyBMfwCW1_Tl4wU79eDqaLzSgXNpcmr-NNE-iKJsDInBCRawdDy7eVlBMxaqVNpgnd1u19jzSRZWEV8EOvs169WFDG86-Ba39AHFfcdpqsoHG0H2EU7TsH67uqv4EwNLOyKa_si8hd0gNuOo-imqBHVarEnqBK7FGKCLD9FjyTDk9yp8uO36BKkd74mtzIIm4BBs7-c7JnY5xV90iSojTvmYeN-xnC93bBp887txRsWiPPEXaSB2F9DP7hFB4CUOdqWkWGfPujguU5uBAjeheM=w1006-h330-no)
+
 
 
 
