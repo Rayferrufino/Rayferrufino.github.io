@@ -1,9 +1,6 @@
 ---
 layout: post
 title: Log Series 1 AWS
-author: Rayzer0
-category: Blue Team
-date: 2019-1-28
 ---
 
 
