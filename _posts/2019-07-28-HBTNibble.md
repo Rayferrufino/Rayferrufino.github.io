@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "HTB Bashed Linux"
+title:  "HTB Nibble Linux"
 description : Great box, bit ctfish, again SUDO permissions get you root!
 tags: HTB, sudo, python
 ---
