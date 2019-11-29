@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "HTB Valentine Linux"
-description : 
-tags: 
+description : Nice box that teaches you how to exploit Hearbleed. tmux for root :)
+tags: HBT, hearbleed, tmux, ssh-key, base64
 ---
 
 # Recon
