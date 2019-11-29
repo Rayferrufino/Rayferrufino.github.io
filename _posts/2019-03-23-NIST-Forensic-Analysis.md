@@ -36,9 +36,9 @@ category: Blue Team
 |WinDbg|
 
 # Imaging Media and Drives
-#### Forensinc images match exactly the original source drive, volume, partition, or device. including Slack space and unallocated space.
-#### Slack space is the space left when a file is written.
-#### Unallocated space is space that has not been partitioned.
+Forensinc images match exactly the original source drive, volume, partition, or device. including Slack space and unallocated space.
+Slack space is the space left when a file is written.
+Unallocated space is space that has not been partitioned.
 ![slack-space](https://itknowledgeexchange.techtarget.com/overheard/files/2016/07/slack-space.png)
 
 ## Analysis Utilities
@@ -48,9 +48,9 @@ category: Blue Team
 - Windows Registry analysis
 - Log file parsing and review
 
-### Live memory capture analysis
-#### Memory dump analysis is use when recovering decryption keys for full disk encryption products like Bitlocker
-#### Hibernation files and crash dumps can both contain the data needed to decrypt the drive
+Live memory capture analysis
+Memory dump analysis is use when recovering decryption keys for full disk encryption products like Bitlocker
+Hibernation files and crash dumps can both contain the data needed to decrypt the drive
 
 # The Forensic Process
 1. Determine what are you trying to find out
