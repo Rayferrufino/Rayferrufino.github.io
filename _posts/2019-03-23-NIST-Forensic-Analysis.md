@@ -1,9 +1,7 @@
 ---
 layout: post
 title: NIST Forensic Analysis
-author: Rayzer0
 category: Blue Team
-date: 2019-7-17
 ---
 
 # NIST Forensic Toolkit
