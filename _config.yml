@@ -1,9 +1,7 @@
 title: Rayzer0 
 author: GitHub User
 email: rayferrufino@gmail.com
-description: 
-  <img src="" alt="" height="200" width="370">
-  Hi folks! Welcome to my blog where I write about pentesting and cybersecurity :)
+description: Hi folks! Welcome to my blog where I write about pentesting and cybersecurity :)
 show_excerpts: false # set to true to show excerpts on the homepage
 
 paginate: 6
