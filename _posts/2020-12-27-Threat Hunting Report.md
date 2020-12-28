@@ -49,3 +49,7 @@ SHA-256 0edb0478a03da835ad18ca5571a31731a6cf1922642d5ffd2940ec40dfdbae13
 ```
 
 ## Searching for the file hash gets you yet another publicly posted blog mentioning it and how its tied to Emotet:
+
+```ruby
+https://paste.cryptolaemus.com/emotet/2020/08/10/emotet-malware-IoCs_08-10-20.html
+```
