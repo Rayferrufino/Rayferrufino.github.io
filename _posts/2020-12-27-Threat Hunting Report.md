@@ -21,3 +21,21 @@ To start off on any investigation I like to just do a quick Google search to see
 A quick search of the provided URL returns multiple resources mentioning it exactly. The best part here is these are hits on the exact URL we are looking for.
 
 ![alt text](https://Rayferrufino.github.io/assets/pic1.png "Logo Title Text 1")
+
+## I will highlight a few of these below:
+
+```python
+https://urlhaus.abuse.ch/url/428853/
+https://paste.cryptolaemus.com/emotet/2020/08/10/emotet-malware-IoCs_08-10-20.html
+https://paste.cryptolaemus.com/emotet/2020/08/12/emotet-malware-IoCs_08-12-20.html
+```
+
+It would appear that the URL is possibly tied to Emotet in some way. We continue to investigate some of these public posts on the URL and quickly can find a good number of doc files posted on Urlhaus tied to the exact url. 
+
+```python
+https://urlhaus.abuse.ch/url/428853/
+https://urlhaus.abuse.ch/host/www.actacomunicacao.com.br/
+```
+
+![alt text](https://Rayferrufino.github.io/assets/pic2.png "Logo Title Text 1")
+
