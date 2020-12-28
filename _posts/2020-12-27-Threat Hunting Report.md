@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Threat Hunting Report"
-description : The following are examples of how we perform Threat Hunting reperst for our clients.
+description : The following are examples of how we perform Threat Hunting reporst for our clients.
 tags: Threat-Hunting, IOC, any-run, virus-total, hash, powershell
 ---
 
@@ -12,3 +12,6 @@ tags: Threat-Hunting, IOC, any-run, virus-total, hash, powershell
 > customers. 
 > Make sure to identify if the domain or related IOCS are hacked, or setup by a malicious actor and any valid files, hashes ETC.
 
+```ruby
+https://www.actacomunicacao.com.br/provisorio/docs/mq57mhq07gy/
+```
