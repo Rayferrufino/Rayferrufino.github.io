@@ -20,4 +20,4 @@ To start off on any investigation I like to just do a quick Google search to see
 
 A quick search of the provided URL returns multiple resources mentioning it exactly. The best part here is these are hits on the exact URL we are looking for.
 
-![alt text](https://Rayferrufino.github.io/blob/master/pic1.png "Logo Title Text 1")
+![alt text](https://github.com/Rayferrufino/Rayferrufino.github.io/blob/master/assets/pic1.png "Logo Title Text 1")
