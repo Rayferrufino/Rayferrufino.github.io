@@ -41,9 +41,11 @@ https://urlhaus.abuse.ch/host/www.actacomunicacao.com.br/
 
 ## Taking the earliest posted sample as an example we are given the following:
 
-```ruby
+```python
 File: FILE_ET5654085637AL.doc	
 MD5 70fbdde86b9ae6a733975dc0980ea712
 SHA-1 bae75e0727170969890336eb60f875267ddc0e35
 SHA-256 0edb0478a03da835ad18ca5571a31731a6cf1922642d5ffd2940ec40dfdbae13
 ```
+
+## Searching for the file hash gets you yet another publicly posted blog mentioning it and how its tied to Emotet:
