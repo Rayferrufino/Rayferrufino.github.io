@@ -15,3 +15,9 @@ tags: Threat-Hunting, IOC, any-run, virus-total, hash, powershell
 ```ruby
 https://www.actacomunicacao.com.br/provisorio/docs/mq57mhq07gy/
 ```
+
+To start off on any investigation I like to just do a quick Google search to see if anyone else has looked at the same thing. A good number of times this will help speed up an investigation, additionally it provides some already timestamped and openly available information that can be shared with a provider.
+
+A quick search of the provided URL returns multiple resources mentioning it exactly. The best part here is these are hits on the exact URL we are looking for.
+
+![alt text](https://github.com/Rayferrufino/Rayferrufino.github.io/blob/master/pic1.png "Logo Title Text 1")
