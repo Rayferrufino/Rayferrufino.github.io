@@ -57,7 +57,7 @@ https://paste.cryptolaemus.com/emotet/2020/08/10/emotet-malware-IoCs_08-10-20.ht
 
 ## A quick check on Virustotal for the file also shows bit more about how the file might be used:
 
-```python
+```ruby
 https://www.virustotal.com/gui/file/0edb0478a03da835ad18ca5571a31731a6cf1922642d5ffd2940ec40dfdbae13/relations
 ```
 
@@ -66,4 +66,7 @@ https://www.virustotal.com/gui/file/0edb0478a03da835ad18ca5571a31731a6cf1922642d
 ```ruby
 https://www.virustotal.com/gui/file/0edb0478a03da835ad18ca5571a31731a6cf1922642d5ffd2940ec40dfdbae13/behavior/Lastline
 ```
+![alt text](https://Rayferrufino.github.io/assets/pic4.png "Logo Title Text 1")
+
+
 
