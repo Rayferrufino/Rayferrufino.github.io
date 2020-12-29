@@ -70,7 +70,7 @@ https://www.virustotal.com/gui/file/0edb0478a03da835ad18ca5571a31731a6cf1922642d
 
 Reviewing the behavior and relationship tabs of the above report we see multiple URLs which might be an indication the file is either being dropped, reaching out to or somehow doing something with some of these.
 
-Online sandbox report:
+## Online sandbox report:
 
 ```ruby
 https://app.any.run/tasks/800484d8-7d39-40ef-a4ac-3ba54481696b/
