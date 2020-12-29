@@ -94,4 +94,11 @@ The PowerShell code is acting as a downloader with a hardcoded list of URLs to i
 ![alt text](https://Rayferrufino.github.io/assets/pic7.png "Logo Title Text 1")
 
 
+## Taking one of the URLs from the list: 
+```ruby
+http://iraniansk.com/wp-content/rm1q_q6x4_l5/
+```
+We can see it dropped a file during the sandbox run.
+
+
 
