@@ -60,3 +60,10 @@ https://paste.cryptolaemus.com/emotet/2020/08/10/emotet-malware-IoCs_08-10-20.ht
 ```python
 https://www.virustotal.com/gui/file/0edb0478a03da835ad18ca5571a31731a6cf1922642d5ffd2940ec40dfdbae13/relations
 ```
+
+![alt text](https://Rayferrufino.github.io/assets/pic3.png "Logo Title Text 1")
+
+```ruby
+https://www.virustotal.com/gui/file/0edb0478a03da835ad18ca5571a31731a6cf1922642d5ffd2940ec40dfdbae13/behavior/Lastline
+```
+
