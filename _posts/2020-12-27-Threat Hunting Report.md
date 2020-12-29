@@ -109,3 +109,12 @@ MD5 16BF0F7A0D8008AEF4FDECCD749C7830
 SHA1 6AB5FE9A8CF33D8043E7FF3CF6880CA8FB375D20
 SHA256 12C0DEAECAFCF3A79D6EF2097E1F0CCC7F72017D7612F45DE8AFB99943FC4875
 ```
+## Searching for this file we find multiple public reports as well:
+
+```ruby
+https://feodotracker.abuse.ch/browse/host/74.120.55.163/
+```
+
+```ruby
+https://app.any.run/tasks/800484d8-7d39-40ef-a4ac-3ba54481696b/
+```
