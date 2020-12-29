@@ -53,3 +53,10 @@ SHA-256 0edb0478a03da835ad18ca5571a31731a6cf1922642d5ffd2940ec40dfdbae13
 ```ruby
 https://paste.cryptolaemus.com/emotet/2020/08/10/emotet-malware-IoCs_08-10-20.html
 ```
+
+
+## A quick check on Virustotal for the file also shows bit more about how the file might be used:
+
+```python
+https://www.virustotal.com/gui/file/0edb0478a03da835ad18ca5571a31731a6cf1922642d5ffd2940ec40dfdbae13/relations
+```
