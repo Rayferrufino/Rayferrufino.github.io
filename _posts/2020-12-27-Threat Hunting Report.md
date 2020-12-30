@@ -176,6 +176,37 @@ which could be the source of some of the activity we are seeing.
 
 Looking specifically at the file being requested via the HTTP Requests tab we download a copy of the file to analyze. 
 > (7125EA5182AD4B5E0C5AFF3764E0BFC4)
+
 ![alt text](https://Rayferrufino.github.io/assets/pic14.png "Logo Title Text 1")
 
+## You can analyze this file many ways, but for speed and simplicity I just submit it to an online sandbox at the provided URL:
+```ruby
+https://capesandbox.com/submit/status/49449/
+```
+![alt text](https://Rayferrufino.github.io/assets/pic15.png "Logo Title Text 1")
 
+This could be done by checking Virustotal and a few other online resources for bits of data or even manually analyze the binary and compare the results to well documented online resources, but for now we are ok to trust the sandbox report based on what we are seeing. 
+
+![alt text](https://Rayferrufino.github.io/assets/pic16.png "Logo Title Text 1")
+
+## You can quickly see the CAPE has extracted a configuration from this binary and identified it as Qakbot (QBOT).
+
+# Reviewing the DOC file itself in the sandbox report:
+
+Further review of the initial report we see PowerShell execution. Digging deeper into this section of the report we see a clear text string with multiple URLs inside.
+![alt text](https://Rayferrufino.github.io/assets/pic17.png "Logo Title Text 1")
+
+# Extracted Marco code:
+> * The following part could be done with many online tools or by hand. *
+
+![alt text](https://Rayferrufino.github.io/assets/pic18.png "Logo Title Text 1")
+
+Throwing the DOC into a safe environment I reviewed the Macros within it. Once again there are many ways of doing this safely, I just went with a manual approach. 
+
+![alt text](https://Rayferrufino.github.io/assets/pic19.png "Logo Title Text 1")
+
+There is a Marco triggered on the opening of the document as well as the closure of the document. Additionally, you can see highlighted below there is a WScript that will get called within the Document.
+
+![alt text](https://Rayferrufino.github.io/assets/pic20.png "Logo Title Text 1")
+
+Extracting out and cleaning up some of the code in the highlighted box above we end up with something similar to the below code snippet which matches what we were seeing earlier in the report.
