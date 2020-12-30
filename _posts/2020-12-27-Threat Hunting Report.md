@@ -210,3 +210,27 @@ There is a Marco triggered on the opening of the document as well as the closure
 ![alt text](https://Rayferrufino.github.io/assets/pic20.png "Logo Title Text 1")
 
 Extracting out and cleaning up some of the code in the highlighted box above we end up with something similar to the below code snippet which matches what we were seeing earlier in the report.
+
+# Summary:
+
+### In summary we have a Document that when run will trigger a sequence of file writes including executing a PowerShell command to download a remote file from a list of URLs. A complete list of these are provided below:
+
+*	hxxp://rijschoolfastandserious.nl/rprmloaw/111111.png 
+*	hxxp://nanfeiqiaowang.com/tsxwe/111111.png
+*	hxxp://forum.insteon.com/suowb/111111.png
+*	hxxp://webtest.pp.ua/yksrpucvx/111111.png
+*	hxxp://quoraforum.com/btmlxjxmyxb/111111.png
+*	hxxp://quickinsolutions.com/wfqggeott/111111.png
+*	hxxp://bronco.is/pdniovzkgwwt/111111.png
+*	hxxp://studiomascellaro.it/wnzzsbzbd/111111.png
+*	hxxp://craniotylla.ch/vzufnt/111111.png
+*	hxxp://marineworks.eu/dwaunrsamlbq/111111.png
+
+```ruby
+File: 111111.png
+MD5 7125ea5182ad4b5e0c5aff3764e0bfc4
+SHA1 ec8428ab51a8344b1b491743fa280dfc3258b58b
+SHA256 1462d21815747b59d0ea426b13e1a60c4900c9dca5ba2783625c861f2daa8ca3
+```
+### Once downloaded this new file will be run on the machine and appears to be a copy of QBOT/Qakbot with a Campaign ID spx155. A complete list of the related controllers for this malware can be found in the sandbox report linked above as well as the extracted configuration details. 
+
