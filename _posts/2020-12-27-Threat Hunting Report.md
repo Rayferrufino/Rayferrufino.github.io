@@ -132,6 +132,20 @@ https://capesandbox.com/submit/status/49440/
 ![alt text](https://Rayferrufino.github.io/assets/pic9.png "Logo Title Text 1")
 
 
+Additionally, we can confirm from the extracted config above that the PowerShell based request below and the immediate traffic after are related. 
+
+![alt text](https://Rayferrufino.github.io/assets/pic10.png "Logo Title Text 1")
+
+# Summary:
+
+In summary the URL h[xx]ps://www.actacomunicacao.com.br/provisorio/docs/mq57mhq07gy/ appears it was for some period of time used as an Emotet distribution point. Reviewing the site and domain history it is likely this site was hacked, and the attacker used this compromised site to distribute their malware. Further research into how such a site would typically be used leads to a useful repository of data https://github.com/NavyTitanium/Misc-Malwares/tree/master/Emotet
 
 
-
+## From the dropped documents we see they contained macro code that would be used to download the actual Emotet binary from URLs similar to the ones below:
+```ruby
+•	http://iraniansk.com/wp-content/rm1q_q6x4_l5/
+•	http://kachetemarketing.com/cgi-bin/9yxsy_nq02_x2tv/
+•	http://kinotheque.com/wp-includes/aidu_9c8_rrlp/
+•	https://onyourleftracing.com/cgi-bin/fotes_4l_enxguwo/
+•	http://slimgenemd.com/hqzfg/z_ya_xkjx5/
+```
