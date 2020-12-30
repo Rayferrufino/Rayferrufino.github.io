@@ -196,7 +196,7 @@ This could be done by checking Virustotal and a few other online resources for b
 Further review of the initial report we see PowerShell execution. Digging deeper into this section of the report we see a clear text string with multiple URLs inside.
 ![alt text](https://Rayferrufino.github.io/assets/pic17.png "Logo Title Text 1")
 
-# Extracted Marco code:
+# Extracted Macro code:
 > * The following part could be done with many online tools or by hand. *
 
 ![alt text](https://Rayferrufino.github.io/assets/pic18.png "Logo Title Text 1")
@@ -205,7 +205,7 @@ Throwing the DOC into a safe environment I reviewed the Macros within it. Once a
 
 ![alt text](https://Rayferrufino.github.io/assets/pic19.png "Logo Title Text 1")
 
-There is a Marco triggered on the opening of the document as well as the closure of the document. Additionally, you can see highlighted below there is a WScript that will get called within the Document.
+There is a Macro triggered on the opening of the document as well as the closure of the document. Additionally, you can see highlighted below there is a WScript that will get called within the Document.
 
 ![alt text](https://Rayferrufino.github.io/assets/pic20.png "Logo Title Text 1")
 
