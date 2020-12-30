@@ -150,4 +150,6 @@ In summary the URL h[xx]ps://www.actacomunicacao.com.br/provisorio/docs/mq57mhq0
 •	http://slimgenemd.com/hqzfg/z_ya_xkjx5/
 ```
 
-description : The following are examples of how we perform Threat Hunting reports for our clients.
+
+> Starting with the previous sandbox report describe what is going on, what malware is being dropped and what infrastructure might be important here. Include IOC data that would be useful in blocking and mitigating the relevant threats here. 
+
