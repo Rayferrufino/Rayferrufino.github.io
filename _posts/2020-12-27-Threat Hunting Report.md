@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Threat Hunting Report"
-description : The following are examples of how we perform Threat Hunting reporst for our clients.
+description : The following are examples of how we perform Threat Hunting reports for our clients.
 tags: Threat-Hunting, IOC, any-run, virus-total, hash, powershell
 ---
 
@@ -149,3 +149,5 @@ In summary the URL h[xx]ps://www.actacomunicacao.com.br/provisorio/docs/mq57mhq0
 •	https://onyourleftracing.com/cgi-bin/fotes_4l_enxguwo/
 •	http://slimgenemd.com/hqzfg/z_ya_xkjx5/
 ```
+
+description : The following are examples of how we perform Threat Hunting reports for our clients.
