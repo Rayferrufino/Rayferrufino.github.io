@@ -170,5 +170,7 @@ which could be the source of some of the activity we are seeing.
 ## Reviewing the process graph we see a clearer breakdown of events. We also see the highlighted QBOT process being spawned by the activity kicked off by PowerShell.
 ![alt text](https://Rayferrufino.github.io/assets/pic12.png "Logo Title Text 1")
 
+## Looking at the IOC section of the report we can see some useful data to dig into.
 
-
+Looking specifically at the file being requested via the HTTP Requests tab we download a copy of the file to analyze. 
+> (7125EA5182AD4B5E0C5AFF3764E0BFC4)
