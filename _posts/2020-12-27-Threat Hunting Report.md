@@ -160,3 +160,15 @@ SHA1: 8DDE045FA14ADC846B3B0F6302C8D8B249895641
 SHA256: 37CFFED69A1601C82615DE5B8C319B35B09C6B7A6F9E879AD9997309FBCC7775
 https://app.any.run/tasks/24d633a6-a75f-490a-b091-cac7617e1c9b/
 ```
+Reviewing the sandbox report above we see a few interesting parts. To start we see a document triggering multiple sub processes and files being written after a PowerShell execution. Additionally we see an http request to a URL 
+```ruby 
+http://rijschoolfastandserious.nl/rprmloaw/111111.png
+```
+which could be the source of some of the activity we are seeing.
+![alt text](https://Rayferrufino.github.io/assets/pic11.png "Logo Title Text 1")
+
+## Reviewing the process graph we see a clearer breakdown of events. We also see the highlighted QBOT process being spawned by the activity kicked off by PowerShell.
+![alt text](https://Rayferrufino.github.io/assets/pic12.png "Logo Title Text 1")
+
+
+
