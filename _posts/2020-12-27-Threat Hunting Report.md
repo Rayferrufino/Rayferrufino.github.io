@@ -153,3 +153,9 @@ In summary the URL h[xx]ps://www.actacomunicacao.com.br/provisorio/docs/mq57mhq0
 
 > Starting with the previous sandbox report describe what is going on, what malware is being dropped and what infrastructure might be important here. Include IOC data that would be useful in blocking and mitigating the relevant threats here. 
 
+```ruby
+File: "08142020_121494057.doc"  
+MD5: 81FEF56212815515D22B62D3824EF5AF
+SHA1: 8DDE045FA14ADC846B3B0F6302C8D8B249895641 
+SHA256: 37CFFED69A1601C82615DE5B8C319B35B09C6B7A6F9E879AD9997309FBCC7775
+```
