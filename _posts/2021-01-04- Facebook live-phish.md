@@ -29,8 +29,6 @@ https://helpsecurityconfirm.com/69403/
 https://premiumaccount.taczoo.com/
 ```
 
-
-```
 ## WhatsApp Phish
 ```ruby
 https://grubsugionooh.finddiamondff12.cf/
