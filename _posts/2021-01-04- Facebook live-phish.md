@@ -38,3 +38,22 @@ https://grubsugionooh.finddiamondff12.cf/
 http://join-grupwa012.duckdns.org
 https://jjoingrupjandaduda15.duckdns.org/
 ```
+### Apple
+
+```ruby
+https://accountscre-mnageamazon-serviceid.com/?apps_secure=
+http://801.angelsampeansu.com/Mon
+https://details-sumarry-receipt-order.com/?Apalagi=
+https://bsjsk8.duckdns.org/asdqwe/?aws=
+```
+
+## Bank Of America
+```ruby
+http://secureamerbo3234.tonohost.com/?i=2
+https://securipboamerc.webcindario.com/
+```
+## Wells Fargo
+```ruby
+https://khafayalb.com/dc.html
+https://dmsatyajit.com/wef/?id=wells
+```
