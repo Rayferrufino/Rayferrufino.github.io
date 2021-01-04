@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Facebook live samples"
-description : A collection of Facebook phishing sites: Facebook app, FB messenger, Instagram, and whatsApp.
+description : A collection of Facebook phishing sites, Facebook app, FB messenger, IG, and WhatsApp.
 tags: Phishkit, webshell, phising-site, malicious-domain
 ---
 
