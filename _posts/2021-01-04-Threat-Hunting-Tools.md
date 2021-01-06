@@ -76,9 +76,10 @@ Telerik Fiddler
 ## Process, DLLs, Handles
 ```ruby
 ProcDOT
-ProcMon, 
-Procces hacker, 
-Regshot, 
+ProcMon
+Procces hacker
+Dependecy-Walker
+Regshot
 Eventviever
 ```
 ## SIEM
@@ -87,3 +88,20 @@ Splunk
 ELK
 ```
 
+## Memory Analysis
+```ruby
+RedLine
+Volatility
+```
+
+## Static Analysis
+```ruby
+PE STUDIO 
+CFF editor
+BINTEXT
+STRINGS
+PEID
+GHIRO - for images
+officemalscanner
+PDF Stream Dumper
+```
