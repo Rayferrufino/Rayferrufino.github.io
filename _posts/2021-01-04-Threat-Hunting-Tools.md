@@ -83,7 +83,7 @@ Eventviever
 ```
 ## SIEM
 ```ruby
-SPLUNK
+Splunk
 ELK
 ```
 
