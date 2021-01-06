@@ -23,3 +23,33 @@ robtosdisallow
 tineye - for images
 exiftool - for images
 ````
+## Online Snaboxes and Reboot-to-Reset
+```ruby
+Cuckoo Sandbox
+Joe Sandbox
+AnyRun
+Sandboxi - for App. sandboxing only
+```
+
+```ruby
+shadow Defender
+DeepFreeze
+Rollback Rx
+```
+## IOC
+
+```ruby
+IOC-editor Fireye
+YARA
+Redline -Fireye
+```
+## Malicious URLs scanner
+```ruby
+URLhaus
+```
+Hash Identifier
+```ruby
+VIRUSTOTAL
+```
+
+
