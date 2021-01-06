@@ -4,7 +4,7 @@ email: rayferrufino@gmail.com
 description: Welcome to my blog where I write about Threat Hunting, Pentesting and Cybersecurity in general.
 show_excerpts: false # set to true to show excerpts on the homepage
 
-paginate: 6
+paginate: 10
 paginate_path: "/blog/page:num/"
 
 tag_permalink_style: pretty
