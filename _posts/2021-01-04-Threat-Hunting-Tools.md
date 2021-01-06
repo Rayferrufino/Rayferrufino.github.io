@@ -47,9 +47,28 @@ Redline -Fireye
 ```ruby
 URLhaus
 ```
-Hash Identifier
+## Hash Identifier
 ```ruby
 VIRUSTOTAL
 ```
+
+## Network Analizers
+```ruby
+RSA Netwitness
+Wireshark
+NetworkMiner
+```
+
+## DNS Analyzer
+```ruby
+ApateDNS
+Fakenet
+```
+
+### Proxy HTTP/HTTPS debbuger
+```ruby
+Telerik Fiddler
+```
+
 
 
