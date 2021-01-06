@@ -42,6 +42,8 @@ Rollback Rx
 IOC-editor Fireye
 YARA
 Redline -Fireye
+IOC finder
+IOC Writer python
 ```
 ## Malicious URLs scanner
 
