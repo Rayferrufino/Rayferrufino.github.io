@@ -19,13 +19,13 @@ https://cybersecurity.att.com/open-threat-exchange
 https://threatconnect.com
  ```
  
- ## Malware Information Sharing Platform (MISP) 
+ ## Malware Information Sharing Platform MISP
  
  ```ruby
  https://www.misp-project.org
  ```
  
- ## CRITs (Collaborative Research Into Threats)
+ ## CRITs Collaborative Research Into Threats
  
  ```ruby
  https://crits.github.io
