@@ -54,7 +54,7 @@ URLhaus
 VIRUSTOTAL
 ```
 
-## Network Analizers
+## Network Analyzers
 
 ```ruby
 RSA Netwitness
@@ -68,7 +68,7 @@ ApateDNS
 Fakenet
 ```
 
-### Proxy HTTP/HTTPS debbuger
+## Proxy HTTP/HTTPS debbuger
 ```ruby
 Telerik Fiddler
 ```
