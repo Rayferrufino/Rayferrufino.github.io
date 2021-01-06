@@ -73,5 +73,17 @@ Fakenet
 Telerik Fiddler
 ```
 
-
+## Process, DLLs, Handles
+```ruby
+ProcDOT
+ProcMon, 
+Procces hacker, 
+Regshot, 
+Eventviever
+```
+## SIEM
+```ruby
+SPLUNK
+ELK
+```
 
